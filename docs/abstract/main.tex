@@ -1,5 +1,6 @@
 %\documentclass[english,edition=2024]{zpiday}
-\documentclass[english,edition=2024]{zpiday}
+%\documentclass[polish,edition=2024]{zpiday}
+\documentclass[polish,edition=2024]{zpiday}
 
 \usepackage{lipsum}
 \title{
@@ -22,11 +23,37 @@
     }
 }
 
+\newcommand{\TheProblemCharacteristics}{
+    \iflanguage{polish}{
+        Zarządzanie zasobami magazynowymi stanowi kluczowy element efektywnego funkcjonowania wielu przedsiębiorstw, zwłaszcza w branżach związanych z logistyką, handlem i produkcją. Problem ten staje się szczególnie istotny w kontekście rosnących oczekiwań związanych z automatyzacją procesów oraz minimalizacją błędów wynikających z manualnego zarządzania.
+    }{
+        TBD
+    }
+}
+
+\newcommand{\TheGoal}{
+    \iflanguage{polish}{
+        Naszym celem jest stworzenie narzędzia, które pomoże firmom śledzić zasoby i zarządzać nimi w sposób bardziej wydajny. Główne założenie techniczne zakładało stworzenie aplikacji PWA w wersji MVP (ang. Minimal Viable Product), czyli posiadającej funkcje CRUD, umożliwiającego zarządzanie magazynami, stanami magazynowymi, dostępnością produktów oraz przypisanymi kategoriami produktów. Funkcjonalność aplikacji została rozszerzona o moduł skanowania kodów QR i kodów kreskowych. Kolejnym elementem jest implementacja geolokacji, która ma na celu przyśpieszenie identyfikacji magazynu na podstawie lokalizacji użytkownika.
+    }{
+        TBD
+    }
+}
+
+\newcommand{\TheBenefits}{
+    \iflanguage{polish}{
+        W kontekście biznesowym projekt miał na celu zwiększenie efektywności zarządzania zasobami, ograniczenie czasu potrzebnego na obsługę procesów magazynowych oraz minimalizację błędów wynikających z manualnych operacji. Technicznie natomiast kluczowym zadaniem było stworzenie intuicyjnego i funkcjonalnego narzędzia, które mogłoby być łatwo integrowane z istniejącymi systemami przedsiębiorstw, a także wykorzystywane zarówno na urządzeniach mobilnych, jak i komputerach.
+    }{
+        TBD
+    }
+}
+
 \newcommand{\TheTechStack}{
+    TBD, current set of technologies is:
     \begin{itemize}
         \item Angular
         \item Spring
         \item AWS
+        \item Hashicorp Terraform
         \item PWA
         \item Docker
         \item ZXing
@@ -50,25 +77,26 @@
 }
 \newcommand{\TheSummary}{
     \iflanguage{polish}{
-        TBD
+        Implementacja projektu przebiegła pomyślnie i zakończyła się sukcesem. Udało nam się zawrzeć wszystkie ważne funkcjonalności, a także w kompleksowy sposób sprawdzić użyteczność i łatwość korzystania z technologii PWA.
     }{
-        \begin{itemize}
-            \item Successfully implemented an application using PWA technology
-            \item 
-        \end{itemize}
+        The implementation of the project proceeded as planned and was successful. We managed to include all important functionalities, and comprehensively tested the usability and ease of use of PWA technology.
     }
 }
 
 \newcommand{\TheFunctionalities}{
     \iflanguage{polish}{
-        TBD
+        \begin{itemize}
+            \item Operacje CRUD, czyli Create, Read, Update, Delete, pozwalające na pełną modyfikację danych przechowywanych w bazie danych,
+            \item Możliwość skanowania kodów kreskowych i kodów QR w intuicyjny sposób w celu szybkiego dostępu do określonego produktu w magazynie,
+            \item Zarządzanie inwentarzem w wielu magazynach,
+            \item Zarządzenie użytkownikami i ich dostępem do funkcjonalności oferowanych przez warstwę systemową,
+        \end{itemize}
     }{
         \begin{itemize}
-            \item Create / Read / Update / Delete
-            \item scanning bar codes and QR codes
-            \item managing stock across multiple warehouses
-            \item managing users and their access to CRUD endpoints
-            \item 
+            \item CRUD operations, i.e. Create, Read, Update, Delete, allowing full modification of data stored in the database,
+            \item Ability to scan barcodes and QR codes in an intuitive way to quickly access a specific product in stock,
+            \item Inventory management across multiple warehouses,
+            \item Management of users and their access to functionalities offered by the system layer,
         \end{itemize}
     }
 }
@@ -83,17 +111,39 @@
 
 \newcommand{\TheConclusions}{
     \iflanguage{polish}{
-        TBD
+        Podsumowując, aplikacja którą zaprojektowaliśmy jest intuicyjna w użyciu i zapewnia podstawowe funkcjonalości wymagane przez pracowników magazynowych. Pozwoli ona na wydajniejsze i prostsze zarządzanie inwentarzem. 
+
+        Dzięki technologii PWA jest ona dostępna zarówno na urządzeniach mobilnych jak i na komputerach, wspiera instalację oraz szybki i łatwy dostęp w warunkach ograniczonego dostępu do internetu. 
+
+        Dla technologicznego odbiorcy znaczenie ma to, że przetestowaliśmy możliwości technologii PWA i udowodniliśmy, że jest ona opłacalna do tworzenia aplikacji na wiele urządzeń przy zachowaniu jednej bazy kodu.
     }{
-        TBD
+        In summary, the application we designed is intuitive to use and provides the basic functionality required by warehouse workers. It will allow for more efficient and simpler inventory management. 
+
+        Thanks to PWA technology, it is accessible on both mobile devices and computers, supports installation and quick and easy access in conditions of limited internet access. 
+
+        What matters to a technological audience is that we have tested the capabilities of PWA technology and proved that it is viable for developing applications for multiple devices while maintaining a single code base.
     }
 }
 
 \newcommand{\TheFurtherResearch}{
     \iflanguage{polish}{
-        TBD
+        Do dalszego rozwoju projektu należałoby uwzględnić jakie inne funkcjonalności mogą być przydatne dla pracowników i zarządzców magazynowych, np.:
+        \begin{itemize}
+            \item optymalizacja układu przedmiotów w magazynie,
+            \item użycie geolokacji do wyznaczania najkrótszej trasy do pożądanej sekcji w magazynie,
+            \item obliczanie trasy i wymagań dotyczących pojemności wózka w celu skompletowania zamówienia z magazynu,
+            \item rozszerzenie aplikacji do wersji komercyjnej, która może wspierać wiele firm w kompleksowy sposób,
+            \item i wiele innych.
+        \end{itemize}
     }{
-        TBD
+        For further development of the project, it would be important to consider what other functionality might be useful for warehouse workers and managers, such as:
+        \begin{itemize}
+            \item optimization of the layout of items in the warehouse,
+            \item use of geolocation to determine the shortest route to the desired section in the warehouse,
+            \item calculation of the route and cart capacity requirements to complete an order from the warehouse,
+            \item expansion of the application to a commercial version that can support multiple companies in a comprehensive way,
+            \item and much more.
+        \end{itemize}
     }
 }
 
@@ -117,7 +167,12 @@
 \end{abstract}
 
 \section{\TheIntroductionHeader}
-    
+    \subsection{\TheProblemCharacteristicsHeader}
+        \TheProblemCharacteristics    
+    \subsection{\TheGoalHeader}
+        \TheGoal    
+    \subsection{\TheBenefitsHeader}
+        \TheBenefits    
 \section{\TheConnectedWorksHeader}
     \subsection{\TheTechStackHeader}
         \TheTechStack
