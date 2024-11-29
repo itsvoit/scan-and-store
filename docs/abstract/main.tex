@@ -1,6 +1,6 @@
 %\documentclass[english,edition=2024]{zpiday}
 %\documentclass[polish,edition=2024]{zpiday}
-\documentclass[polish,edition=2024]{zpiday}
+\documentclass[english,edition=2024]{zpiday}
 
 \usepackage{lipsum}
 \title{
@@ -10,10 +10,9 @@
 }
 \acronym{SNS}
 \supervisor{Rafał Palak}
-\members{Adam Klementowski \orcid{} \and Adam Rudnicki \orcid{} \and Adam Skowron \orcid{} \and Wojciech Skrzypiec \orcid{0009-0002-7523-0276} }
+\members{Adam Klementowski \orcid{} \and Adam Rudnicki \orcid{} \and Adam Skowron \orcid{} \and Wojciech Skrzypiec \orcid{0009-0002-7523-0276}}
 \projectLogo{images/logo_zpi.png}
-\techStackIcons{Adobe-XD}
-
+\techStackIcons{Angular,Spring,AWS,TypeScript,Java,Docker,HashiCorp-Terraform,Chrome,Apple-Safari,Firefox}
 
 \newcommand{\TheAbstract}{%
     \iflanguage{polish}{
@@ -27,7 +26,7 @@
     \iflanguage{polish}{
         Zarządzanie zasobami magazynowymi stanowi kluczowy element efektywnego funkcjonowania wielu przedsiębiorstw, zwłaszcza w branżach związanych z logistyką, handlem i produkcją. Problem ten staje się szczególnie istotny w kontekście rosnących oczekiwań związanych z automatyzacją procesów oraz minimalizacją błędów wynikających z manualnego zarządzania.
     }{
-        TBD
+        Inventory management is a key element in the efficient operation of many companies, especially in industries related to logistics, trade and manufacturing. This issue becomes particularly relevant in the context of growing expectations of process automation and minimization of errors resulting from manual management.
     }
 }
 
@@ -35,7 +34,7 @@
     \iflanguage{polish}{
         Naszym celem jest stworzenie narzędzia, które pomoże firmom śledzić zasoby i zarządzać nimi w sposób bardziej wydajny. Główne założenie techniczne zakładało stworzenie aplikacji PWA w wersji MVP (ang. Minimal Viable Product), czyli posiadającej funkcje CRUD, umożliwiającego zarządzanie magazynami, stanami magazynowymi, dostępnością produktów oraz przypisanymi kategoriami produktów. Funkcjonalność aplikacji została rozszerzona o moduł skanowania kodów QR i kodów kreskowych. Kolejnym elementem jest implementacja geolokacji, która ma na celu przyśpieszenie identyfikacji magazynu na podstawie lokalizacji użytkownika.
     }{
-        TBD
+        Our goal is to create a tool that will help companies track and manage resources more efficiently. The main technical assumption was to create an MVP (Minimal Viable Product) version of the PWA application, i.e. one that has CRUD functions to manage warehouses, inventory, product availability and assigned product categories. The application's functionality has been expanded to include a QR code and barcode scanning module. Another feature is the implementation of geolocation, which is designed to speed up warehouse identification based on user location.
     }
 }
 
@@ -43,11 +42,30 @@
     \iflanguage{polish}{
         W kontekście biznesowym projekt miał na celu zwiększenie efektywności zarządzania zasobami, ograniczenie czasu potrzebnego na obsługę procesów magazynowych oraz minimalizację błędów wynikających z manualnych operacji. Technicznie natomiast kluczowym zadaniem było stworzenie intuicyjnego i funkcjonalnego narzędzia, które mogłoby być łatwo integrowane z istniejącymi systemami przedsiębiorstw, a także wykorzystywane zarówno na urządzeniach mobilnych, jak i komputerach.
     }{
+        In the business context, the project aimed to increase the efficiency of inventory management, reduce the time required to handle warehouse processes and minimize errors resulting from manual operations. On the other hand, the key technical task was to create an intuitive and functional tool that could be easily integrated with existing enterprise systems, as well as used on both mobile devices and computers.
+    }
+}
+
+
+\newcommand{\TheRelatedWorksDescription}{
+    \iflanguage{polish}{
         TBD
+    }{
+        TBD % todo finish english description of related works
     }
 }
 
 \newcommand{\TheTechStack}{
+    \iflanguage{polish}{
+        TBD
+    }{
+        TBD % todo finish english tech stack description
+    }
+
+    \PrintTechStackIcons
+}
+
+\newcommand{\TheOldTechStack}{
     TBD, current set of technologies is:
     \begin{itemize}
         \item Angular
@@ -105,7 +123,7 @@
     \iflanguage{polish}{
         TBD
     }{
-        TBD
+        TBD % todo finish english description of the achieved business goals
     }
 }
 
@@ -151,12 +169,10 @@
     \iflanguage{polish}{
         TBD
     }{
-        TBD
+        TBD % todo include acknowledgements
     }
 }
     
-
-
 
 \begin{document}
 
@@ -173,7 +189,9 @@
         \TheGoal    
     \subsection{\TheBenefitsHeader}
         \TheBenefits    
-\section{\TheConnectedWorksHeader}
+\section{\TheRelatedWorksHeader}
+    \subsection{\TheRelatedWorksDescriptionHeader}
+        \TheRelatedWorksDescription
     \subsection{\TheTechStackHeader}
         \TheTechStack
     \subsection{\TheProjectAssumptionsHeader}
@@ -209,8 +227,8 @@
 %     \item Third item.
 % \end{itemize}
 
-\cite{lamport1994}
-\cite{rowling1997}
+% \cite{lamport1994}
+% \cite{rowling1997}
 
 \bibliographystyle{plain}
 \bibliography{references}

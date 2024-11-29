@@ -2,4 +2,14 @@ docs/abstract/main.*
 !docs/abstract/main.tex
 !docs/abstract/main.pdf
 
-docs/abstract/icons
+docs/abstract/icons/*
+!docs/abstract/icons/Angular.pdf
+!docs/abstract/icons/Spring.pdf
+!docs/abstract/icons/AWS.pdf
+!docs/abstract/icons/TypeScript.pdf
+!docs/abstract/icons/Java.pdf
+!docs/abstract/icons/Docker.pdf
+!docs/abstract/icons/HashiCorp.pdf-Terraform
+!docs/abstract/icons/Chrome.pdf
+!docs/abstract/icons/Apple.pdf-Safari
+!docs/abstract/icons/Firefox.pdf
