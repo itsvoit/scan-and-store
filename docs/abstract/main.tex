@@ -1,0 +1,164 @@
+%\documentclass[english,edition=2024]{zpiday}
+\documentclass[english,edition=2024]{zpiday}
+
+\usepackage{lipsum}
+\title{
+    \iflanguage{polish}
+    {System do Zarządzania Inwentarzem z Użyciem Kodów Kreskowych i Kodów QR}
+    {Inventory Management System with Barcode and QR Code Integration}
+}
+\acronym{SNS}
+\supervisor{Rafał Palak}
+\members{Adam Klementowski \orcid{} \and Adam Rudnicki \orcid{} \and Adam Skowron \orcid{} \and Wojciech Skrzypiec \orcid{0009-0002-7523-0276} }
+\projectLogo{images/logo_zpi.png}
+\techStackIcons{Adobe-XD}
+
+
+\newcommand{\TheAbstract}{%
+    \iflanguage{polish}{
+        Projekt miał na celu usprawnienie zarządzania inwentarzem dla małych i dużych przedsiębiorstw poprzez wdrożenie aplikacji jako Progressive Web App (PWA) z funkcjami takimi jak skanowanie kodów kreskowych i kodów QR lub automatyczne wybieranie magazynu na podstawie geolokalizacji użytkownika. Z powodzeniem zaprojektowaliśmy responsywną i intuicyjną aplikację z najważniejszymi funkcjami, która jest dostępna na wielu urządzeniach. Dowiedzieliśmy się o ograniczeniach i mocnych stronach PWA, a także o procesie integracji PWA w kompletną aplikację. Pomoże to przyszłym badaczom lepiej projektować i integrować tę technologię w swoich projektach.
+    }{
+        The project aimed to improve the inventory management experience for small and large scale enterprises by implementing the application as a Progressive Web App (PWA) with functionalities such as scanning of bar and QR codes or pin point the warehouse based on the user's geolocation. We successfully designed a responsive and intuitive application with the most vital functionalities that is accessible on multiple devices. We learned about the restrictions and strengths of PWA as well as the process of integrating into a complete application. It will help future researchers to better design and integrate this technology in their projects.
+    }
+}
+
+\newcommand{\TheTechStack}{
+    \begin{itemize}
+        \item Angular
+        \item Spring
+        \item AWS
+        \item PWA
+        \item Docker
+        \item ZXing
+    \end{itemize}
+}
+
+\newcommand{\TheProjectAssumptions}{
+    \iflanguage{polish}{
+        Na początku projektu ustaliliśmy różne ograniczenia i założenia, aby ograniczyć zakres i poprowadzić rozwój we właściwym kierunku. 
+        
+        Naszym celem było stworzenie prostej i intuicyjnej aplikacji, która pozwoli użytkownikom, na różnych poziomach umiejętności, z powodzeniem korzystać z naszej aplikacji. Dzięki technologii PWA chcieliśmy uzyskać aplikację dostępną na wielu urządzeniach, z prostą instalacją i natywnym interfejsem graficznym.
+
+        Zdecydowaliśmy się ograniczyć zakres i wspierać tylko jedną firmę posiadającą wiele magazynów. Magazyny te mogą zawierać elementy współdzielone między nimi i mieć indywidualne inwentarze. Nie będzie formularza rejestracyjnego - każdy pracownik w firmie będzie musiał zostać ręcznie dodany przez administratora
+    }{
+        At the beginning of the project we set multiple restrictions and assumptions to limit the scope and guide the development in the right direction. 
+        
+        We set out to create a simple and intuitive application to allow users across all skill levels to successfully use our application. Thanks to the PWA technology we wanted to achieve an application that is available on multiple devices with simple installation and a native feel.
+
+        We decided to limit the scope and support only a single company owning multiple warehouses. Those warehouses can contain items shared between them and have individual stocks. There will not be a registration form - each employee in the company will have to be manually added by the administrator.
+    }
+}
+\newcommand{\TheSummary}{
+    \iflanguage{polish}{
+        TBD
+    }{
+        \begin{itemize}
+            \item Successfully implemented an application using PWA technology
+            \item 
+        \end{itemize}
+    }
+}
+
+\newcommand{\TheFunctionalities}{
+    \iflanguage{polish}{
+        TBD
+    }{
+        \begin{itemize}
+            \item Create / Read / Update / Delete
+            \item scanning bar codes and QR codes
+            \item managing stock across multiple warehouses
+            \item managing users and their access to CRUD endpoints
+            \item 
+        \end{itemize}
+    }
+}
+
+\newcommand{\TheBusinessGoals}{
+    \iflanguage{polish}{
+        TBD
+    }{
+        TBD
+    }
+}
+
+\newcommand{\TheConclusions}{
+    \iflanguage{polish}{
+        TBD
+    }{
+        TBD
+    }
+}
+
+\newcommand{\TheFurtherResearch}{
+    \iflanguage{polish}{
+        TBD
+    }{
+        TBD
+    }
+}
+
+\newcommand{\TheAcknowledgments}{
+    \iflanguage{polish}{
+        TBD
+    }{
+        TBD
+    }
+}
+    
+
+
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+    \TheAbstract
+\end{abstract}
+
+\section{\TheIntroductionHeader}
+    
+\section{\TheConnectedWorksHeader}
+    \subsection{\TheTechStackHeader}
+        \TheTechStack
+    \subsection{\TheProjectAssumptionsHeader}
+        \TheProjectAssumptions
+        
+\section{\TheResultsHeader}
+    \subsection{\TheSummaryHeader}
+        \TheSummary
+    \subsection{\TheFunctionalitiesHeader}
+        \TheFunctionalities
+    \subsection{\TheBusinessGoalsHeader}
+        \TheBusinessGoals
+        
+\section{\TheConclusionsHeader}
+    \TheConclusions
+    
+\section{\TheFurtherResearchHeader}
+    \TheFurtherResearch
+    
+\section{\TheAcknowledgmentsHeader}
+    \TheAcknowledgments
+    
+% \begin{figure}[h]
+%     \centering
+%     \includegraphics[width=0.5\linewidth]{images/ZPI-Day-cmyk.pdf}
+%     \caption{To jest obrazek}
+%     \label{fig:zpi-day}
+% \end{figure}
+
+% \begin{itemize}
+%     \item First item \cite{lamport1994}.
+%     \item Second item \cite{rowling1997}.
+%     \item Third item.
+% \end{itemize}
+
+\cite{lamport1994}
+\cite{rowling1997}
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+
+\end{document}
