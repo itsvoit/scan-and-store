@@ -144,6 +144,18 @@
     \iflanguage{polish}{Wstęp}{Introduction}
 }
 
+\newcommand{\TheProblemCharacteristicsHeader}{
+    \iflanguage{polish}{Characterystyka problemu}{Problem characteristics}
+}
+
+\newcommand{\TheGoalHeader}{
+    \iflanguage{polish}{Cel}{Goal}
+}
+
+\newcommand{\TheBenefitsHeader}{
+    \iflanguage{polish}{Korzyści biznesowe i techniczne}{Business and technical benefits}
+}
+
 \newcommand{\TheConnectedWorksHeader}{
     \iflanguage{polish}{Powiązane prace}{Connected works}
 }
@@ -169,11 +181,11 @@
 }
 
 \newcommand{\TheConclusionsHeader}{
-    \iflanguage{polish}{Wnioski}{Conclusions}
+    \iflanguage{polish}{Podsumowanie}{Conclusions}
 }
 
 \newcommand{\TheFurtherResearchHeader}{
-    \iflanguage{polish}{Dalsze badania}{Further research}
+    \iflanguage{polish}{Przyszłe kierunki rozwoju}{Further research}
 }
 
 \newcommand{\TheAcknowledgmentsHeader}{
