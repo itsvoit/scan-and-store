@@ -31,6 +31,11 @@
 \RequirePackage{babel}
 \RequirePackage{pgffor}
 \RequirePackage{graphicx}
+% for icons display
+\RequirePackage{array}
+\RequirePackage{calc}
+\RequirePackage{mwe}
+
 \renewcommand{\baselinestretch}{1.0}
 % header
 \RequirePackage{fancyhdr}
@@ -156,8 +161,12 @@
     \iflanguage{polish}{Korzyści biznesowe i techniczne}{Business and technical benefits}
 }
 
-\newcommand{\TheConnectedWorksHeader}{
-    \iflanguage{polish}{Powiązane prace}{Connected works}
+\newcommand{\TheRelatedWorksHeader}{
+    \iflanguage{polish}{Powiązane prace}{Related works}
+}
+
+\newcommand{\TheRelatedWorksDescriptionHeader}{
+    \iflanguage{polish}{Opis}{Description}
 }
 
 \newcommand{\TheProjectAssumptionsHeader}{
@@ -190,6 +199,14 @@
 
 \newcommand{\TheAcknowledgmentsHeader}{
     \iflanguage{polish}{Podziękowania}{Acknowledgments}
+}
+
+\newcommand{\PrintTechStackIcons}{
+    \begin{center}
+        \foreach \x in \@techStackIcons{
+            \includegraphics[width=1.2cm]{icons/\x.pdf}
+        }
+    \end{center}
 }
 
 \makeatother
