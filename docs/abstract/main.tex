@@ -48,28 +48,28 @@
 
 
 \newcommand{\TheRelatedWorksDescription}{
-\iflanguage{polish}{
-    TBD
-}{
-    Inventory management systems play a critical role in streamlining warehouse operations, optimizing stock levels, and improving business efficiency.
-    Enterprise Resource Planning (ERP) systems, such as SAP, Oracle NetSuite, and Odoo, are popular solutions in this domain offering comprehensive features ranging from inventory tracking to financial management.
-    However, these platforms often require significant resources for deployment and maintenance, making them less accessible for smaller enterprises.
+    \iflanguage{polish}{
+        TBD
+    }{
+        Enterprise Resource Planning (ERP) systems, such as SAP\cite{sap}, Oracle NetSuite\cite{oracleNS}, and Odoo\cite{odoo}, are popular solutions in this domain offering comprehensive features ranging from inventory tracking to financial management.
+        However, these platforms often require significant resources for deployment and maintenance, making them less accessible for smaller enterprises.
 
-    For small- and medium-scale enterprises, SaaS (Software as a Service) solutions like Zoho Inventory and TradeGecko are popular alternatives.
-    These tools are user-friendly, lightweight, and integrate well with other software but often lack scalability and deep customization for larger operations.
+        For small- and medium-scale enterprises, SaaS (Software as a Service) solutions like Zoho Inventory\cite{zoho} and TradeGecko\cite{tradegecko} are popular alternatives.
+        These tools are user-friendly, lightweight, and integrate well with other software but often lack scalability and deep customization for larger operations.
 
-    In the context of technology, barcode and QR code integration has become a cornerstone of modern inventory systems.
-    Libraries such as ZXing offer reliable and efficient methods for decoding these codes, streamlining product identification and tracking.
+        In the context of technology, barcode and QR code integration has become a cornerstone of modern inventory systems.
+        Libraries such as ZXing\cite{zxing} offer reliable and efficient methods for decoding these codes, making product identification and tracking much easier.
 
-    Progressive Web Apps (PWAs) are gaining traction for their ability to combine the accessibility of web applications with the native performance of mobile apps.
-    Their features include offline functionality, simple installation, and access to device capabilities such as cameras and geolocation.
-    PWAs also enable unified development across platforms, reducing costs and maintenance efforts.
+        Progressive Web Apps (PWAs)\cite{pwa} are gaining traction for their ability to combine the accessibility of web applications with the native performance of mobile apps.
+        Their features include offline functionality, simple installation, and access to device capabilities such as cameras and geolocation.
+        PWAs also enable unified development across platforms, reducing costs and maintenance efforts.
 
-    Our project builds upon these insights to deliver a PWA-based inventory management system tailored for enterprises of varying sizes.
-    This project represents an initial exploration of PWA technology in the context of inventory management.
-    Rather than aiming to create a superior alternative to existing, professional systems, our goal is to assess the potential of PWAs for such applications.
-    We are focused on experimenting with and testing the unique capabilities of PWAs to determine their viability for small and medium-sized enterprises in real-world business applications scenarios.
-    By integrating technologies such as Angular, Spring Boot, PostgreSQL, and AWS, we aim to create a scalable, cost-effective, and accessible solution that combines the simplicity of SaaS tools with the power of ERP platforms.
+        Our project builds upon these insights to deliver a PWA-based inventory management system tailored for enterprises of varying sizes.
+        This project represents an initial exploration of PWA technology in the context of inventory management.
+        Rather than aiming to create a superior alternative to existing, professional systems, our goal is to assess the potential of PWAs for such applications.
+        We are focused on experimenting with and testing the unique capabilities of PWAs to determine their viability for small and medium-sized enterprises in real-world business applications scenarios.
+        By integrating technologies such as Angular\cite{angular}, Spring Boot\cite{springboot}, PostgreSQL\cite{postgresql}, and AWS\cite{aws}, we aim to create a scalable, cost-effective, and accessible solution that combines the simplicity of SaaS tools with the power of ERP platforms.
+    }
 }
 
 \newcommand{\TheTechStack}{
@@ -78,17 +78,17 @@
     }{
         Our project uses a modern and robust tech stack designed to deliver both scalability and reliability:
         \begin{itemize}
-        \item Angular: A dynamic frontend framework for building interactive and responsive web applications.
-        \item Spring Framework: A backend framework that simplifies the creation of scalable and reliable APIs.
-        \item AWS (Amazon Web Services): A suite of cloud services for hosting, databases, and scaling applications etc.
-        \item Docker: A containerization tool for consistent and efficient deployment.
-        \item Hashicorp Terraform: Infrastructure as Code (IaC) to automate and manage cloud resources.
-        \item ZXing: A library for barcode and QR code processing.
+        \item Angular: A dynamic frontend framework for building interactive and responsive web applications. \cite{angular}
+        \item Spring Framework: A backend framework that simplifies the creation of scalable and reliable APIs. \cite{springboot}
+        \item AWS (Amazon Web Services): A suite of cloud services for hosting, databases, and scaling applications etc. \cite{aws}
+        \item Docker: A containerization tool for consistent and efficient deployment. \cite{docker}
+        \item Hashicorp Terraform: Infrastructure as Code (IaC) to automate and manage cloud resources. \cite{terraform}
+        \item ZXing: A library for barcode and QR code processing. \cite{zxing}
         \end{itemize}
 
         During the selection process, we considered other technologies:
         \begin{itemize}
-        \item Frontend: Alternatives like Next.js (for server-side rendering) and Vue.js (for simplicity and flexibility) were evaluated.
+        \item Frontend: Alternatives like Next.js \cite{nextjs} (for server-side rendering) and Vue.js \cite{vuejs} (for simplicity and flexibility) were evaluated.
         \item Backend: While we chose Java with Spring Boot for its maturity and scalability, Kotlin was considered for its modern syntax and null safety.
         \end{itemize}
     }
@@ -154,46 +154,55 @@
     \iflanguage{polish}{
         TBD
     }{
-        Our project addresses key business and technical goals :
-
-        \subsubsection*{Business Goals:}
         \begin{enumerate}
 
         \item Enhanced Inventory Management:
         The system integrates barcode and QR code scanning to improve asset tracking, streamline inventory control, and provide quick access to details such as stock levels and locations.
-        Push notifications ensure timely restocking and reduce operational downtime.
-
-        \item Cost Savings:
-        Optimizing inventory levels and improving warehouse organization minimizes stockouts and overstocking, translating into financial savings for businesses.
 
         \item Improved Efficiency:
         Simplified management of incoming and outgoing deliveries enhances organization, reduces processing times, and boosts overall productivity.
 
         \end{enumerate}
-        \subsubsection*{Technical Goals:}
+    }
+}
+
+\newcommand{\TheTechnicalGoals}{
+    \iflanguage{polish}{
+        TBD
+    }{
         \begin{enumerate}
 
-        \item Cross-Platform Compatibility:
-        Using Progressive Web App (PWA) technology ensures the app works seamlessly across devices while maintaining a single codebase, reducing development and maintenance efforts.
+            \item Cross-Platform Compatibility:
+            Using Progressive Web App (PWA) technology ensures the app works seamlessly across devices while maintaining a single codebase, reducing development and maintenance efforts.
+    
+            \item Scalable Architecture:
+            The backend, designed with Spring Boot and deployed on AWS using Terraform, is built to handle increasing data loads and user demands.
+    
+            \item Secure Data Management:
+            With Amazon Cognito for authentication and other security measures, the app protects user data and ensures resource access is authorized.
+    
+            \item Modern Development Practices
+            Technologies like Terraform, Docker and Nginx highlight the use of efficient, modern tools for development, deployment, and infrastructure management.
+    
+            \end{enumerate}
 
-        \item Scalable Architecture:
-        The backend, designed with Spring Boot and deployed on AWS using Terraform, is built to handle increasing data loads and user demands.
+            Although this project is part of an academic course and lacks real-world deployment or metrics, it successfully demonstrates the feasibility of effective inventory management solutions while showcasing the educational value of applying industry-standard technologies.
+    }
+}
 
-        \item Secure Data Management:
-        With Amazon Cognito for authentication and other security measures, the app protects user data and ensures resource access is authorized.
-
-        \item Modern Development Practices
-        Technologies like Terraform, Docker and Nginx highlight the use of efficient, modern tools for development, deployment, and infrastructure management.
-
-        \end{enumerate}
-
-        Although this project is part of an academic course and lacks real-world deployment or metrics, it successfully demonstrates the feasibility of effective inventory management solutions while showcasing the educational value of applying industry-standard technologies.
-
-        Additional Highlights:
+\newcommand{\TheAdditionalHighlights}{
+    \iflanguage{polish}{
+        TBD
+    }{
         \begin{itemize}
-        \item Feasibility Demonstration: The app proves the potential of PWAs for inventory management, laveraing their core features and capabilities.
-        \item Technical Design: Built with scalability and security in mind, the system employs modern tools such as AWS and Terraform, aligning with enterprise-level best practices and conventions.
-        \item Practical Value: Offers hands-on experience with technologies like Angular and Spring Boot, preparing us for real-world challenges.
+        \item Feasibility Demonstration: 
+        The app proves the potential of PWAs for inventory management, levaraging their core features and capabilities.
+
+        \item Technical Design: 
+        Built with scalability and security in mind, the system employs modern tools such as AWS and Terraform, aligning with enterprise-level best practices and conventions.
+
+        \item Practical Value: 
+        Offers hands-on experience with technologies like Angular and Spring Boot, preparing us for real-world challenges.
         \end{itemize}
     }
 }
@@ -289,6 +298,11 @@
 \subsection{\TheBusinessGoalsHeader}
 \TheBusinessGoals
 
+\subsection{\TheTechnicalGoalsHeader}
+\TheTechnicalGoals
+
+\subsection{\TheAdditionalHighlightsHeader}
+\TheAdditionalHighlights
 
 \section{\TheConclusionsHeader}
 \TheConclusions
