@@ -48,18 +48,49 @@
 
 
 \newcommand{\TheRelatedWorksDescription}{
-    \iflanguage{polish}{
-        TBD
-    }{
-        TBD % todo finish english description of related works
-    }
+\iflanguage{polish}{
+    TBD
+}{
+    Inventory management systems play a critical role in streamlining warehouse operations, optimizing stock levels, and improving business efficiency.
+    Enterprise Resource Planning (ERP) systems, such as SAP, Oracle NetSuite, and Odoo, are popular solutions in this domain offering comprehensive features ranging from inventory tracking to financial management.
+    However, these platforms often require significant resources for deployment and maintenance, making them less accessible for smaller enterprises.
+
+    For small- and medium-scale enterprises, SaaS (Software as a Service) solutions like Zoho Inventory and TradeGecko are popular alternatives.
+    These tools are user-friendly, lightweight, and integrate well with other software but often lack scalability and deep customization for larger operations.
+
+    In the context of technology, barcode and QR code integration has become a cornerstone of modern inventory systems.
+    Libraries such as ZXing offer reliable and efficient methods for decoding these codes, streamlining product identification and tracking.
+
+    Progressive Web Apps (PWAs) are gaining traction for their ability to combine the accessibility of web applications with the native performance of mobile apps.
+    Their features include offline functionality, simple installation, and access to device capabilities such as cameras and geolocation.
+    PWAs also enable unified development across platforms, reducing costs and maintenance efforts.
+
+    Our project builds upon these insights to deliver a PWA-based inventory management system tailored for enterprises of varying sizes.
+    This project represents an initial exploration of PWA technology in the context of inventory management.
+    Rather than aiming to create a superior alternative to existing, professional systems, our goal is to assess the potential of PWAs for such applications.
+    We are focused on experimenting with and testing the unique capabilities of PWAs to determine their viability for small and medium-sized enterprises in real-world business applications scenarios.
+    By integrating technologies such as Angular, Spring Boot, PostgreSQL, and AWS, we aim to create a scalable, cost-effective, and accessible solution that combines the simplicity of SaaS tools with the power of ERP platforms.
 }
 
 \newcommand{\TheTechStack}{
     \iflanguage{polish}{
         TBD
     }{
-        TBD % todo finish english tech stack description
+        Our project uses a modern and robust tech stack designed to deliver both scalability and reliability:
+        \begin{itemize}
+        \item Angular: A dynamic frontend framework for building interactive and responsive web applications.
+        \item Spring Framework: A backend framework that simplifies the creation of scalable and reliable APIs.
+        \item AWS (Amazon Web Services): A suite of cloud services for hosting, databases, and scaling applications etc.
+        \item Docker: A containerization tool for consistent and efficient deployment.
+        \item Hashicorp Terraform: Infrastructure as Code (IaC) to automate and manage cloud resources.
+        \item ZXing: A library for barcode and QR code processing.
+        \end{itemize}
+
+        During the selection process, we considered other technologies:
+        \begin{itemize}
+        \item Frontend: Alternatives like Next.js (for server-side rendering) and Vue.js (for simplicity and flexibility) were evaluated.
+        \item Backend: While we chose Java with Spring Boot for its maturity and scalability, Kotlin was considered for its modern syntax and null safety.
+        \end{itemize}
     }
 
     \PrintTechStackIcons
@@ -68,26 +99,26 @@
 \newcommand{\TheOldTechStack}{
     TBD, current set of technologies is:
     \begin{itemize}
-        \item Angular
-        \item Spring
-        \item AWS
-        \item Hashicorp Terraform
-        \item PWA
-        \item Docker
-        \item ZXing
+    \item Angular
+    \item Spring
+    \item AWS
+    \item Hashicorp Terraform
+    \item PWA
+    \item Docker
+    \item ZXing
     \end{itemize}
 }
 
 \newcommand{\TheProjectAssumptions}{
     \iflanguage{polish}{
-        Na początku projektu ustaliliśmy różne ograniczenia i założenia, aby ograniczyć zakres i poprowadzić rozwój we właściwym kierunku. 
-        
+        Na początku projektu ustaliliśmy różne ograniczenia i założenia, aby ograniczyć zakres i poprowadzić rozwój we właściwym kierunku.
+
         Naszym celem było stworzenie prostej i intuicyjnej aplikacji, która pozwoli użytkownikom, na różnych poziomach umiejętności, z powodzeniem korzystać z naszej aplikacji. Dzięki technologii PWA chcieliśmy uzyskać aplikację dostępną na wielu urządzeniach, z prostą instalacją i natywnym interfejsem graficznym.
 
         Zdecydowaliśmy się ograniczyć zakres i wspierać tylko jedną firmę posiadającą wiele magazynów. Magazyny te mogą zawierać elementy współdzielone między nimi i mieć indywidualne inwentarze. Nie będzie formularza rejestracyjnego - każdy pracownik w firmie będzie musiał zostać ręcznie dodany przez administratora
     }{
-        At the beginning of the project we set multiple restrictions and assumptions to limit the scope and guide the development in the right direction. 
-        
+        At the beginning of the project we set multiple restrictions and assumptions to limit the scope and guide the development in the right direction.
+
         We set out to create a simple and intuitive application to allow users across all skill levels to successfully use our application. Thanks to the PWA technology we wanted to achieve an application that is available on multiple devices with simple installation and a native feel.
 
         We decided to limit the scope and support only a single company owning multiple warehouses. Those warehouses can contain items shared between them and have individual stocks. There will not be a registration form - each employee in the company will have to be manually added by the administrator.
@@ -104,17 +135,17 @@
 \newcommand{\TheFunctionalities}{
     \iflanguage{polish}{
         \begin{itemize}
-            \item Operacje CRUD, czyli Create, Read, Update, Delete, pozwalające na pełną modyfikację danych przechowywanych w bazie danych,
-            \item Możliwość skanowania kodów kreskowych i kodów QR w intuicyjny sposób w celu szybkiego dostępu do określonego produktu w magazynie,
-            \item Zarządzanie inwentarzem w wielu magazynach,
-            \item Zarządzenie użytkownikami i ich dostępem do funkcjonalności oferowanych przez warstwę systemową,
+        \item Operacje CRUD, czyli Create, Read, Update, Delete, pozwalające na pełną modyfikację danych przechowywanych w bazie danych,
+        \item Możliwość skanowania kodów kreskowych i kodów QR w intuicyjny sposób w celu szybkiego dostępu do określonego produktu w magazynie,
+        \item Zarządzanie inwentarzem w wielu magazynach,
+        \item Zarządzenie użytkownikami i ich dostępem do funkcjonalności oferowanych przez warstwę systemową,
         \end{itemize}
     }{
         \begin{itemize}
-            \item CRUD operations, i.e. Create, Read, Update, Delete, allowing full modification of data stored in the database,
-            \item Ability to scan barcodes and QR codes in an intuitive way to quickly access a specific product in stock,
-            \item Inventory management across multiple warehouses,
-            \item Management of users and their access to functionalities offered by the system layer,
+        \item CRUD operations, i.e. Create, Read, Update, Delete, allowing full modification of data stored in the database,
+        \item Ability to scan barcodes and QR codes in an intuitive way to quickly access a specific product in stock,
+        \item Inventory management across multiple warehouses,
+        \item Management of users and their access to functionalities offered by the system layer,
         \end{itemize}
     }
 }
@@ -123,21 +154,61 @@
     \iflanguage{polish}{
         TBD
     }{
-        TBD % todo finish english description of the achieved business goals
+        Our project addresses key business and technical goals :
+
+        \subsubsection*{Business Goals:}
+        \begin{enumerate}
+
+        \item Enhanced Inventory Management:
+        The system integrates barcode and QR code scanning to improve asset tracking, streamline inventory control, and provide quick access to details such as stock levels and locations.
+        Push notifications ensure timely restocking and reduce operational downtime.
+
+        \item Cost Savings:
+        Optimizing inventory levels and improving warehouse organization minimizes stockouts and overstocking, translating into financial savings for businesses.
+
+        \item Improved Efficiency:
+        Simplified management of incoming and outgoing deliveries enhances organization, reduces processing times, and boosts overall productivity.
+
+        \end{enumerate}
+        \subsubsection*{Technical Goals:}
+        \begin{enumerate}
+
+        \item Cross-Platform Compatibility:
+        Using Progressive Web App (PWA) technology ensures the app works seamlessly across devices while maintaining a single codebase, reducing development and maintenance efforts.
+
+        \item Scalable Architecture:
+        The backend, designed with Spring Boot and deployed on AWS using Terraform, is built to handle increasing data loads and user demands.
+
+        \item Secure Data Management:
+        With Amazon Cognito for authentication and other security measures, the app protects user data and ensures resource access is authorized.
+
+        \item Modern Development Practices
+        Technologies like Terraform, Docker and Nginx highlight the use of efficient, modern tools for development, deployment, and infrastructure management.
+
+        \end{enumerate}
+
+        Although this project is part of an academic course and lacks real-world deployment or metrics, it successfully demonstrates the feasibility of effective inventory management solutions while showcasing the educational value of applying industry-standard technologies.
+
+        Additional Highlights:
+        \begin{itemize}
+        \item Feasibility Demonstration: The app proves the potential of PWAs for inventory management, laveraing their core features and capabilities.
+        \item Technical Design: Built with scalability and security in mind, the system employs modern tools such as AWS and Terraform, aligning with enterprise-level best practices and conventions.
+        \item Practical Value: Offers hands-on experience with technologies like Angular and Spring Boot, preparing us for real-world challenges.
+        \end{itemize}
     }
 }
 
 \newcommand{\TheConclusions}{
     \iflanguage{polish}{
-        Podsumowując, aplikacja którą zaprojektowaliśmy jest intuicyjna w użyciu i zapewnia podstawowe funkcjonalości wymagane przez pracowników magazynowych. Pozwoli ona na wydajniejsze i prostsze zarządzanie inwentarzem. 
+        Podsumowując, aplikacja którą zaprojektowaliśmy jest intuicyjna w użyciu i zapewnia podstawowe funkcjonalości wymagane przez pracowników magazynowych. Pozwoli ona na wydajniejsze i prostsze zarządzanie inwentarzem.
 
-        Dzięki technologii PWA jest ona dostępna zarówno na urządzeniach mobilnych jak i na komputerach, wspiera instalację oraz szybki i łatwy dostęp w warunkach ograniczonego dostępu do internetu. 
+        Dzięki technologii PWA jest ona dostępna zarówno na urządzeniach mobilnych jak i na komputerach, wspiera instalację oraz szybki i łatwy dostęp w warunkach ograniczonego dostępu do internetu.
 
         Dla technologicznego odbiorcy znaczenie ma to, że przetestowaliśmy możliwości technologii PWA i udowodniliśmy, że jest ona opłacalna do tworzenia aplikacji na wiele urządzeń przy zachowaniu jednej bazy kodu.
     }{
-        In summary, the application we designed is intuitive to use and provides the basic functionality required by warehouse workers. It will allow for more efficient and simpler inventory management. 
+        In summary, the application we designed is intuitive to use and provides the basic functionality required by warehouse workers. It will allow for more efficient and simpler inventory management.
 
-        Thanks to PWA technology, it is accessible on both mobile devices and computers, supports installation and quick and easy access in conditions of limited internet access. 
+        Thanks to PWA technology, it is accessible on both mobile devices and computers, supports installation and quick and easy access in conditions of limited internet access.
 
         What matters to a technological audience is that we have tested the capabilities of PWA technology and proved that it is viable for developing applications for multiple devices while maintaining a single code base.
     }
@@ -147,20 +218,20 @@
     \iflanguage{polish}{
         Do dalszego rozwoju projektu należałoby uwzględnić jakie inne funkcjonalności mogą być przydatne dla pracowników i zarządzców magazynowych, np.:
         \begin{itemize}
-            \item optymalizacja układu przedmiotów w magazynie,
-            \item użycie geolokacji do wyznaczania najkrótszej trasy do pożądanej sekcji w magazynie,
-            \item obliczanie trasy i wymagań dotyczących pojemności wózka w celu skompletowania zamówienia z magazynu,
-            \item rozszerzenie aplikacji do wersji komercyjnej, która może wspierać wiele firm w kompleksowy sposób,
-            \item i wiele innych.
+        \item optymalizacja układu przedmiotów w magazynie,
+        \item użycie geolokacji do wyznaczania najkrótszej trasy do pożądanej sekcji w magazynie,
+        \item obliczanie trasy i wymagań dotyczących pojemności wózka w celu skompletowania zamówienia z magazynu,
+        \item rozszerzenie aplikacji do wersji komercyjnej, która może wspierać wiele firm w kompleksowy sposób,
+        \item i wiele innych.
         \end{itemize}
     }{
         For further development of the project, it would be important to consider what other functionality might be useful for warehouse workers and managers, such as:
         \begin{itemize}
-            \item optimization of the layout of items in the warehouse,
-            \item use of geolocation to determine the shortest route to the desired section in the warehouse,
-            \item calculation of the route and cart capacity requirements to complete an order from the warehouse,
-            \item expansion of the application to a commercial version that can support multiple companies in a comprehensive way,
-            \item and much more.
+        \item optimization of the layout of items in the warehouse,
+        \item use of geolocation to determine the shortest route to the desired section in the warehouse,
+        \item calculation of the route and cart capacity requirements to complete an order from the warehouse,
+        \item expansion of the application to a commercial version that can support multiple companies in a comprehensive way,
+        \item and much more.
         \end{itemize}
     }
 }
@@ -172,48 +243,64 @@
         TBD % todo include acknowledgements
     }
 }
-    
+
 
 \begin{document}
 
 \maketitle
 
 \begin{abstract}
-    \TheAbstract
+\TheAbstract
 \end{abstract}
 
+
 \section{\TheIntroductionHeader}
-    \subsection{\TheProblemCharacteristicsHeader}
-        \TheProblemCharacteristics    
-    \subsection{\TheGoalHeader}
-        \TheGoal    
-    \subsection{\TheBenefitsHeader}
-        \TheBenefits    
+
+\subsection{\TheProblemCharacteristicsHeader}
+\TheProblemCharacteristics
+
+\subsection{\TheGoalHeader}
+\TheGoal
+
+\subsection{\TheBenefitsHeader}
+\TheBenefits
+
+
 \section{\TheRelatedWorksHeader}
-    \subsection{\TheRelatedWorksDescriptionHeader}
-        \TheRelatedWorksDescription
-    \subsection{\TheTechStackHeader}
-        \TheTechStack
-    \subsection{\TheProjectAssumptionsHeader}
-        \TheProjectAssumptions
-        
+
+\subsection{\TheRelatedWorksDescriptionHeader}
+\TheRelatedWorksDescription
+
+\subsection{\TheTechStackHeader}
+\TheTechStack
+
+\subsection{\TheProjectAssumptionsHeader}
+\TheProjectAssumptions
+
+
 \section{\TheResultsHeader}
-    \subsection{\TheSummaryHeader}
-        \TheSummary
-    \subsection{\TheFunctionalitiesHeader}
-        \TheFunctionalities
-    \subsection{\TheBusinessGoalsHeader}
-        \TheBusinessGoals
-        
+
+\subsection{\TheSummaryHeader}
+\TheSummary
+
+\subsection{\TheFunctionalitiesHeader}
+\TheFunctionalities
+
+\subsection{\TheBusinessGoalsHeader}
+\TheBusinessGoals
+
+
 \section{\TheConclusionsHeader}
-    \TheConclusions
-    
+\TheConclusions
+
+
 \section{\TheFurtherResearchHeader}
-    \TheFurtherResearch
-    
+\TheFurtherResearch
+
+
 \section{\TheAcknowledgmentsHeader}
-    \TheAcknowledgments
-    
+\TheAcknowledgments
+
 % \begin{figure}[h]
 %     \centering
 %     \includegraphics[width=0.5\linewidth]{images/ZPI-Day-cmyk.pdf}
