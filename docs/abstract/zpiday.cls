@@ -36,6 +36,9 @@
 \RequirePackage{calc}
 \RequirePackage{mwe}
 
+% citing urls
+\RequirePackage{url}
+
 \renewcommand{\baselinestretch}{1.0}
 % header
 \RequirePackage{fancyhdr}
@@ -187,6 +190,14 @@
 
 \newcommand{\TheBusinessGoalsHeader}{
     \iflanguage{polish}{Cele biznesowe}{Business goals}
+}
+
+\newcommand{\TheTechnicalGoalsHeader}{
+    \iflanguage{polish}{Cele techniczne}{Technical goals}
+}
+
+\newcommand{\TheAdditionalHighlightsHeader}{
+    \iflanguage{polish}{Pozostałe uwagi}{Additional highlights}
 }
 
 \newcommand{\TheConclusionsHeader}{
