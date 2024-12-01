@@ -1,0 +1,50 @@
+\documentclass[polish,edition=2024]{zpidoc}
+
+\title{
+    \iflanguage{polish}
+    {Scan and Store\break System do Zarządzania Inwentarzem z Użyciem Kodów Kreskowych i Kodów QR}
+    {Scan and Store\break Inventory Management System with Barcode and QR Code Integration}
+}
+\acronym{SNS}
+\supervisor{dr inż. Rafał Palak}
+% \members{Adam Klementowski \orcid{0009-0003-8693-3601},Adam Rudnicki \orcid{0009-0006-7009-813X},Adam Skowron \orcid{0009-0009-0543-0038},Wojciech Skrzypiec \orcid{0009-0002-7523-0276}}
+\members{Adam Klementowski,Adam Rudnicki,Adam Skowron,Wojciech Skrzypiec}
+\keywords{zarządzanie inwentarzem, PWA}
+\projectLogo{images/logo_zpi.png}
+\techStackIcons{Angular,Spring,AWS,TypeScript,Java,Docker,HashiCorp-Terraform,Chrome,Apple-Safari,Firefox}
+
+\graphicspath{images} % source for images
+
+\usepackage{subfiles} % Best loaded last in the preamble
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+\newpage
+
+\subfile{sections/acronims}
+\subfile{sections/goal-and-scope}
+\subfile{sections/dictionary}
+\subfile{sections/state-of-the-art}
+\subfile{sections/assumptions}
+\subfile{sections/requirements}
+\subfile{sections/project-design}
+\subfile{sections/implementation}
+\subfile{sections/results}
+
+
+% \begin{figure}[h]
+%     \centering
+%     \includegraphics[width=0.5\linewidth]{images/ZPI-Day-cmyk.pdf}
+%     \caption{To jest obrazek}
+%     \label{fig:zpi-day}
+% \end{figure}
+
+
+% \bibliographystyle{plain}
+% \bibliography{references}
+
+
+\end{document}
