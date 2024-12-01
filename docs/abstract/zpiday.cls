@@ -188,6 +188,10 @@
     \iflanguage{polish}{Funkcjonalności}{Functionalities}
 }
 
+\newcommand{\TheSolutionHeader}{
+    \iflanguage{polish}{Rozwiązanie}{The Solution}
+}
+
 \newcommand{\TheBusinessGoalsHeader}{
     \iflanguage{polish}{Cele biznesowe}{Business goals}
 }

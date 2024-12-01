@@ -18,7 +18,7 @@
     \iflanguage{polish}{
         Projekt miał na celu usprawnienie zarządzania inwentarzem dla małych i dużych przedsiębiorstw poprzez wdrożenie aplikacji jako Progressive Web App (PWA) z funkcjami takimi jak skanowanie kodów kreskowych i kodów QR lub automatyczne wybieranie magazynu na podstawie geolokalizacji użytkownika. Z powodzeniem zaprojektowaliśmy responsywną i intuicyjną aplikację z najważniejszymi funkcjami, która jest dostępna na wielu urządzeniach. Dowiedzieliśmy się o ograniczeniach i mocnych stronach PWA, a także o procesie integracji PWA w kompletną aplikację. Pomoże to przyszłym badaczom lepiej projektować i integrować tę technologię w swoich projektach.
     }{
-        The project aimed to improve the inventory management experience for small and large scale enterprises by implementing the application as a Progressive Web App (PWA) with functionalities such as scanning of bar and QR codes or pin point the warehouse based on the user's geolocation. We successfully designed a responsive and intuitive application with the most vital functionalities that is accessible on multiple devices. We learned about the restrictions and strengths of PWA as well as the process of integrating into a complete application. It will help future researchers to better design and integrate this technology in their projects.
+        The project aimed to improve the inventory management experience for small and large scale enterprises by implementing the application as a Progressive Web App (PWA) with functionalities such as scanning of bar and QR codes or pin point the warehouse based on the user's geolocation. We successfully designed a responsive and intuitive application with the most vital functionalities that is accessible on multiple devices. We learned about the restrictions and strengths of PWA as well as the process of integrating into a complete application. It will help future developers to better design and integrate this technology in their projects.
     }
 }
 
@@ -64,71 +64,31 @@
         Their features include offline functionality, simple installation, and access to device capabilities such as cameras and geolocation.
         PWAs also enable unified development across platforms, reducing costs and maintenance efforts.
 
+    }
+}
+
+\newcommand{\TheSummary}{
+    \iflanguage{polish}{
+        Implementacja projektu przebiegła pomyślnie i zakończyła się sukcesem. Udało nam się zawrzeć wszystkie ważne funkcjonalności, a także w kompleksowy sposób sprawdzić użyteczność i łatwość korzystania z technologii PWA.
+    }{
+        
         Our project builds upon these insights to deliver a PWA-based inventory management system tailored for enterprises of varying sizes.
         This project represents an initial exploration of PWA technology in the context of inventory management.
         Rather than aiming to create a superior alternative to existing, professional systems, our goal is to assess the potential of PWAs for such applications.
         We are focused on experimenting with and testing the unique capabilities of PWAs to determine their viability for small and medium-sized enterprises in real-world business applications scenarios.
         By integrating technologies such as Angular\cite{angular}, Spring Boot\cite{springboot}, PostgreSQL\cite{postgresql}, and AWS\cite{aws}, we aim to create a scalable, cost-effective, and accessible solution that combines the simplicity of SaaS tools with the power of ERP platforms.
+    
+        The implementation of the project proceeded as planned and was successful. We managed to include all important functionalities, and comprehensively tested the usability and ease of use of PWA technology.
     }
 }
 
-\newcommand{\TheTechStack}{
+\newcommand{\TheSolution}{
     \iflanguage{polish}{
         TBD
     }{
-        Our project uses a modern and robust tech stack designed to deliver both scalability and reliability:
-        \begin{itemize}
-        \item Angular: A dynamic frontend framework for building interactive and responsive web applications. \cite{angular}
-        \item Spring Framework: A backend framework that simplifies the creation of scalable and reliable APIs. \cite{springboot}
-        \item AWS (Amazon Web Services): A suite of cloud services for hosting, databases, and scaling applications etc. \cite{aws}
-        \item Docker: A containerization tool for consistent and efficient deployment. \cite{docker}
-        \item Hashicorp Terraform: Infrastructure as Code (IaC) to automate and manage cloud resources. \cite{terraform}
-        \item ZXing: A library for barcode and QR code processing. \cite{zxing}
-        \end{itemize}
+        % todo solution description and why its unique
 
-        During the selection process, we considered other technologies:
-        \begin{itemize}
-        \item Frontend: Alternatives like Next.js \cite{nextjs} (for server-side rendering) and Vue.js \cite{vuejs} (for simplicity and flexibility) were evaluated.
-        \item Backend: While we chose Java with Spring Boot for its maturity and scalability, Kotlin was considered for its modern syntax and null safety.
-        \end{itemize}
-    }
-
-    \PrintTechStackIcons
-}
-
-\newcommand{\TheOldTechStack}{
-    TBD, current set of technologies is:
-    \begin{itemize}
-    \item Angular
-    \item Spring
-    \item AWS
-    \item Hashicorp Terraform
-    \item PWA
-    \item Docker
-    \item ZXing
-    \end{itemize}
-}
-
-\newcommand{\TheProjectAssumptions}{
-    \iflanguage{polish}{
-        Na początku projektu ustaliliśmy różne ograniczenia i założenia, aby ograniczyć zakres i poprowadzić rozwój we właściwym kierunku.
-
-        Naszym celem było stworzenie prostej i intuicyjnej aplikacji, która pozwoli użytkownikom, na różnych poziomach umiejętności, z powodzeniem korzystać z naszej aplikacji. Dzięki technologii PWA chcieliśmy uzyskać aplikację dostępną na wielu urządzeniach, z prostą instalacją i natywnym interfejsem graficznym.
-
-        Zdecydowaliśmy się ograniczyć zakres i wspierać tylko jedną firmę posiadającą wiele magazynów. Magazyny te mogą zawierać elementy współdzielone między nimi i mieć indywidualne inwentarze. Nie będzie formularza rejestracyjnego - każdy pracownik w firmie będzie musiał zostać ręcznie dodany przez administratora
-    }{
-        At the beginning of the project we set multiple restrictions and assumptions to limit the scope and guide the development in the right direction.
-
-        We set out to create a simple and intuitive application to allow users across all skill levels to successfully use our application. Thanks to the PWA technology we wanted to achieve an application that is available on multiple devices with simple installation and a native feel.
-
-        We decided to limit the scope and support only a single company owning multiple warehouses. Those warehouses can contain items shared between them and have individual stocks. There will not be a registration form - each employee in the company will have to be manually added by the administrator.
-    }
-}
-\newcommand{\TheSummary}{
-    \iflanguage{polish}{
-        Implementacja projektu przebiegła pomyślnie i zakończyła się sukcesem. Udało nam się zawrzeć wszystkie ważne funkcjonalności, a także w kompleksowy sposób sprawdzić użyteczność i łatwość korzystania z technologii PWA.
-    }{
-        The implementation of the project proceeded as planned and was successful. We managed to include all important functionalities, and comprehensively tested the usability and ease of use of PWA technology.
+        Our use of PWA functionalities makes the application easy to use and implement on multiple devices while maintaining a single code base. And at the same time it provides access to device sensors, like the camera or geolocation, which we used to add additional functionalities: scanning of bar codes and QR codes, pin pointing the exact warehouse the user is currently stationed in.
     }
 }
 
@@ -142,7 +102,7 @@
         \end{itemize}
     }{
         \begin{itemize}
-        \item CRUD operations, i.e. Create, Read, Update, Delete, allowing full modification of data stored in the database,
+        \item Create, Read, Update and Delete (CRUD) operations, allowing for full modification of data stored in the database, such as: items, warehouses, inventory, etc.,
         \item Ability to scan barcodes and QR codes in an intuitive way to quickly access a specific product in stock,
         \item Inventory management across multiple warehouses,
         \item Management of users and their access to functionalities offered by the system layer,
@@ -187,6 +147,46 @@
             \end{enumerate}
 
             Although this project is part of an academic course and lacks real-world deployment or metrics, it successfully demonstrates the feasibility of effective inventory management solutions while showcasing the educational value of applying industry-standard technologies.
+    }
+}
+
+\newcommand{\TheTechStack}{
+    \iflanguage{polish}{
+        TBD
+    }{
+        Our project uses a modern and robust tech stack designed to deliver both scalability and reliability:
+        \begin{itemize}
+        \item Angular: A dynamic frontend framework for building interactive and responsive web applications. \cite{angular}
+        \item Spring Framework: A backend framework that simplifies the creation of scalable and reliable APIs. \cite{springboot}
+        \item AWS (Amazon Web Services): A suite of cloud services for hosting, databases, and scaling applications etc. \cite{aws}
+        \item Docker: A containerization tool for consistent and efficient deployment. \cite{docker}
+        \item Hashicorp Terraform: Infrastructure as Code (IaC) to automate and manage cloud resources. \cite{terraform}
+        \item ZXing: A library for barcode and QR code processing. \cite{zxing}
+        \end{itemize}
+
+        During the selection process, we considered other technologies:
+        \begin{itemize}
+        \item Frontend: Alternatives like Next.js \cite{nextjs} (for server-side rendering) and Vue.js \cite{vuejs} (for simplicity and flexibility) were evaluated.
+        \item Backend: While we chose Java with Spring Boot for its maturity and scalability, Kotlin was considered for its modern syntax and null safety.
+        \end{itemize}
+    }
+
+    \PrintTechStackIcons
+}
+
+\newcommand{\TheProjectAssumptions}{
+    \iflanguage{polish}{
+        Na początku projektu ustaliliśmy różne ograniczenia i założenia, aby ograniczyć zakres i poprowadzić rozwój we właściwym kierunku.
+
+        Naszym celem było stworzenie prostej i intuicyjnej aplikacji, która pozwoli użytkownikom, na różnych poziomach umiejętności, z powodzeniem korzystać z naszej aplikacji. Dzięki technologii PWA chcieliśmy uzyskać aplikację dostępną na wielu urządzeniach, z prostą instalacją i natywnym interfejsem graficznym.
+
+        Zdecydowaliśmy się ograniczyć zakres i wspierać tylko jedną firmę posiadającą wiele magazynów. Magazyny te mogą zawierać elementy współdzielone między nimi i mieć indywidualne inwentarze. Nie będzie formularza rejestracyjnego - każdy pracownik w firmie będzie musiał zostać ręcznie dodany przez administratora
+    }{
+        At the beginning of the project we set multiple restrictions and assumptions to limit the scope and guide the development in the right direction.
+
+        We set out to create a simple and intuitive application to allow users across all skill levels to successfully use our application. Thanks to the PWA technology we wanted to achieve an application that is available on multiple devices with simple installation and a native feel.
+
+        We decided to limit the scope and support only a single company owning multiple warehouses. Those warehouses can contain items shared between them and have individual stocks. There will not be a registration form - each employee in the company will have to be manually added by the administrator.
     }
 }
 
@@ -265,55 +265,56 @@
 
 \section{\TheIntroductionHeader}
 
-\subsection{\TheProblemCharacteristicsHeader}
-\TheProblemCharacteristics
+    \subsection{\TheProblemCharacteristicsHeader}
+        \TheProblemCharacteristics
 
-\subsection{\TheGoalHeader}
-\TheGoal
+    \subsection{\TheGoalHeader}
+        \TheGoal
 
-\subsection{\TheBenefitsHeader}
-\TheBenefits
+    \subsection{\TheBenefitsHeader}
+        \TheBenefits
 
 
 \section{\TheRelatedWorksHeader}
 
-\subsection{\TheRelatedWorksDescriptionHeader}
-\TheRelatedWorksDescription
-
-\subsection{\TheTechStackHeader}
-\TheTechStack
-
-\subsection{\TheProjectAssumptionsHeader}
-\TheProjectAssumptions
+    % \subsection{\TheRelatedWorksDescriptionHeader}
+        \TheRelatedWorksDescription
 
 
 \section{\TheResultsHeader}
 
-\subsection{\TheSummaryHeader}
-\TheSummary
+    \subsection{\TheSummaryHeader}
+        \TheSummary
 
-\subsection{\TheFunctionalitiesHeader}
-\TheFunctionalities
+    \subsection{\TheProjectAssumptionsHeader}
+        \TheProjectAssumptions
 
-\subsection{\TheBusinessGoalsHeader}
-\TheBusinessGoals
+    \subsection{\TheBusinessGoalsHeader}
+        \TheBusinessGoals
 
-\subsection{\TheTechnicalGoalsHeader}
-\TheTechnicalGoals
+    \subsection{\TheTechnicalGoalsHeader}
+        \TheTechnicalGoals
 
-\subsection{\TheAdditionalHighlightsHeader}
-\TheAdditionalHighlights
+    \subsection{\TheSolutionHeader}
+        \TheSolution
+
+    \subsection{\TheFunctionalitiesHeader}
+        \TheFunctionalities
+
+    \subsection{\TheTechStackHeader}
+        \TheTechStack
+
+    \subsection{\TheAdditionalHighlightsHeader}
+        \TheAdditionalHighlights
 
 \section{\TheConclusionsHeader}
-\TheConclusions
-
+    \TheConclusions
 
 \section{\TheFurtherResearchHeader}
-\TheFurtherResearch
+    \TheFurtherResearch
 
-
-\section{\TheAcknowledgmentsHeader}
-\TheAcknowledgments
+% \section{\TheAcknowledgmentsHeader}
+%     \TheAcknowledgments
 
 % \begin{figure}[h]
 %     \centering
