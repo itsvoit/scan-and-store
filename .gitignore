@@ -9,9 +9,9 @@ docs/abstract/icons/*
 !docs/abstract/icons/TypeScript.pdf
 !docs/abstract/icons/Java.pdf
 !docs/abstract/icons/Docker.pdf
-!docs/abstract/icons/HashiCorp.pdf-Terraform
+!docs/abstract/icons/HashiCorp-Terraform.pdf
 !docs/abstract/icons/Chrome.pdf
-!docs/abstract/icons/Apple.pdf-Safari
+!docs/abstract/icons/Apple-Safari.pdf
 !docs/abstract/icons/Firefox.pdf
 
 docs/documentation/sections/*.pdf
