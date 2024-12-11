@@ -20,3 +20,4 @@ docs/documentation/sections/*.pdf
 *.fls
 *.log
 *.synctex.gz
+*.toc

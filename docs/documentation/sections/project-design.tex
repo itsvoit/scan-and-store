@@ -1,7 +1,31 @@
 \documentclass[../main.tex]{subfiles}
-\graphicspath{{\subfix{../images/}}}
+\graphicspath{../images/}
 
 \begin{document}
 \section{Projekt produktu programowego}
+    \subsection{Baza danych}
+        Baza danych została zaimplementowana w PostgreSQL według diagramu na Rysunku \ref{fig:db-diagram}.
+
+        \begin{figure}[!ht]
+            \centering
+            \includegraphics[width=1.0\linewidth]{images/db-diagram.png}
+            \caption{Diagram fizyczny bazy danych}
+            \label{fig:db-diagram}
+        \end{figure}
+
+    \subsection{Architektura}
+        Architektura aplikacji została wdrożona przy pomocy narzędzia HashiCorp Terraform na platformie AWS. Schemat zawierający najważniejsze elementy architektury przedstawiony jest na Rysunku \ref{fig:aws-architecture} 
+        \begin{figure}[!ht]
+            \centering
+            \includegraphics[width=1.0\linewidth]{images/AWS-diagram.png}
+            \caption{Diagram architektury AWS}
+            \label{fig:aws-architecture}
+        \end{figure}
+
+    \subsection{Pozostałe schematy i diagramy}
+
+        \subsubsection*{Diagram przypadków użycia}
+        \subsubsection*{Diagram klas}
+        \subsubsection*{Schemat przebiegu aplikacji}
 
 \end{document}
