@@ -32,6 +32,7 @@
 \RequirePackage{babel}
 \RequirePackage{pgffor}
 \RequirePackage{graphicx}
+\RequirePackage{subcaption}
 
 % for icons display
 \RequirePackage{array}
