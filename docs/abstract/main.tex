@@ -1,5 +1,3 @@
-%\documentclass[english,edition=2024]{zpiday}
-%\documentclass[polish,edition=2024]{zpiday}
 \documentclass[english,edition=2024]{zpiday}
 
 \usepackage{lipsum}
@@ -14,12 +12,11 @@
 \projectLogo{images/logo_zpi.png}
 \techStackIcons{Angular,Spring,AWS,TypeScript,Java,Docker,HashiCorp-Terraform,Chrome,Apple-Safari,Firefox}
 
-\newcommand{\TheAbstract}{%
+\newcommand{\TheAbstract}{
     \iflanguage{polish}{
         Projekt miał na celu usprawnienie zarządzania inwentarzem dla małych i dużych przedsiębiorstw poprzez wdrożenie aplikacji jako Progressive Web App (PWA) z funkcjami takimi jak skanowanie kodów kreskowych i kodów QR lub automatyczne wybieranie magazynu na podstawie geolokalizacji użytkownika. Z powodzeniem zaprojektowaliśmy responsywną i intuicyjną aplikację z najważniejszymi funkcjami, która jest dostępna na wielu urządzeniach. Dowiedzieliśmy się o ograniczeniach i mocnych stronach PWA, a także o procesie integracji PWA w kompletną aplikację. Pomoże to przyszłym badaczom lepiej projektować i integrować tę technologię w swoich projektach.
     }{
-        The project aimed to improve the inventory management experience for small and large scale enterprises by implementing the application as a Progressive Web Application (PWA) with functionalities such as scanning of bar and QR codes or pin point the warehouse based on the user's geolocation. e managed to successfully implement a responsive and intuitive application with the most vital functionalities that is accessible on multiple devices. We learned about the restrictions and strengths of PWA as well as the process of integrating into a complete application. It will help future developers to better design and integrate this technology in their projects.
-        %This project represents an initial exploration of PWA technology in the context of inventory management. Rather than aiming to create a superior alternative to existing, professional systems, our goal is to assess the potential of PWAs for such applications. We are focused on experimenting with and testing the unique capabilities of PWAs to determine their viability for small and medium-sized enterprises in real-world business applications scenarios.
+        The project aimed to improve the inventory management experience for small and large scale enterprises by implementing the application as a Progressive Web Application (PWA) with functionalities such as scanning of bar and QR codes or pinpointing the warehouse based on the user's geolocation. We managed to successfully implement a responsive application with the most vital functionalities that is accessible on multiple devices. We learned about the restrictions and strengths of PWA as well as the process of integrating it into a complete application. It will help future developers to better design and integrate this technology in their projects.
 
     }
 }
@@ -28,7 +25,7 @@
     \iflanguage{polish}{
         Zarządzanie zasobami magazynowymi stanowi kluczowy element efektywnego funkcjonowania wielu przedsiębiorstw, zwłaszcza w branżach związanych z logistyką, handlem i produkcją. Problem ten staje się szczególnie istotny w kontekście rosnących oczekiwań związanych z automatyzacją procesów oraz minimalizacją błędów wynikających z manualnego zarządzania.
     }{
-        Inventory management is a key element of the effective functioning of many companies, especially in industries related to logistics, trade and production. This issue becomes particularly important in the context of growing expectations regarding process automation and minimizing errors resulting from manual management. The problem deepens especially during the entry of new companies to the market, which do not have sufficient capital required to create dedicated software for each type of device. %dodalem tutaj koncowke
+        Inventory management is a key element of the effective functioning of many companies, especially in industries related to logistics, trade and production. This issue becomes particularly important in the context of growing expectations regarding process automation and minimizing errors resulting from manual management. The problem deepens especially during the entry of new companies to the market, which do not have sufficient capital required to create dedicated software for each type of device.
     }
 }
 
@@ -36,7 +33,7 @@
     \iflanguage{polish}{
         Naszym celem jest stworzenie narzędzia, które pomoże firmom śledzić zasoby i zarządzać nimi w sposób bardziej wydajny. Główne założenie techniczne zakładało stworzenie aplikacji PWA w wersji MVP (ang. Minimal Viable Product), czyli posiadającej funkcje CRUD, umożliwiającego zarządzanie magazynami, stanami magazynowymi, dostępnością produktów oraz przypisanymi kategoriami produktów. Funkcjonalność aplikacji została rozszerzona o moduł skanowania kodów QR i kodów kreskowych. Kolejnym elementem jest implementacja geolokacji, która ma na celu przyśpieszenie identyfikacji magazynu na podstawie lokalizacji użytkownika.
     }{
-        Our goal is to create a tool that will help companies track and manage resources more effectively. The main technical assumption was to create an MVP (Minimal Viable Product) version of the PWA application, i.e. one that has CRUD functions to manage warehouses, inventory, product availability and assigned product categories. The goal of creating a PWA application was to create a single tool that could be used on many devices, regardless of whether the device is running on the preferred system. The application's functionality was extended with a QR code and barcode scanning module. Scanning the codes was to enable faster obtaining of information about a given product. Another implemented function is geolocation, which is to speed up warehouse identification based on the user's location. The functionality of QR code scanning was to be extended to edit the warehouse status after scanning the QR code. The QR code was to contain data that the system would read and present to the employee for processing. This solution could significantly speed up the receipt and issuance of products from warehouses. %tu rowniez dodalem to jako nasz cel
+        Our goal is to create a tool that will help companies track and manage resources more effectively. The main technical assumption was to create an MVP (Minimal Viable Product) version of the PWA application, i.e. one that has CRUD functionalities to manage warehouses, inventory, product availability and assigned product categories. The goal of creating a PWA application was to create a single tool that could be used on many devices, regardless of whether the device is running on the preferred system. The application's functionality was supposed to be extended with a QR code and barcode scanning module. Scanning the codes was to enable faster obtaining of information about a given product. Another sensor-based functionality is geolocation, which can speed up warehouse identification based on the user's location. QR code scanning was to be extended to edit the warehouse status after scanning the QR code. The QR code was to contain data that the system would read and present to the employee for processing. This solution could significantly speed up the receipt and issuance of products from warehouses.
     }
 }
 
@@ -44,7 +41,7 @@
     \iflanguage{polish}{
         W kontekście biznesowym projekt miał na celu zwiększenie efektywności zarządzania zasobami, ograniczenie czasu potrzebnego na obsługę procesów magazynowych oraz minimalizację błędów wynikających z manualnych operacji. Technicznie natomiast kluczowym zadaniem było stworzenie intuicyjnego i funkcjonalnego narzędzia, które mogłoby być łatwo integrowane z istniejącymi systemami przedsiębiorstw, a także wykorzystywane zarówno na urządzeniach mobilnych, jak i komputerach.
     }{
-        In the business context, the project aimed to create an intuitive and functional tool that can be easily integrated with existing enterprise systems and used on both mobile devices and computers. On the other hand, the system aimed to increase the efficiency of inventory management, reduce the time needed to handle warehouse processes and minimize errors resulting from manual operations. %zamienilem kolejnoscia (mainuje PWA no nie)
+        In the business context, the project aimed to create an intuitive and functional tool that can be easily deployed and used on both mobile devices and computers. On the other hand, the system aimed to minimize errors resulting from manual inventory management.
     }
 }
 
@@ -57,11 +54,11 @@
         However, these platforms often require significant resources for deployment and maintenance, making them less accessible for smaller enterprises.
 
         For small- and medium-scale enterprises, SaaS (Software as a Service) solutions like Zoho Inventory\cite{zoho} and TradeGecko\cite{tradegecko} are popular alternatives.
-        These tools are user-friendly, lightweight, and integrate well with other software, but they lack scalability and deep customization for larger operations. The above-mentioned software is mainly used to process orders and ship items from given warehouses. We want to investigate whether achieving similar functionality, as well as automating some operations (receiving and issuing products) is possible using PWA (Progressive Web Application). PWA technology offers several significant advantages that can translate into greater flexibility and lower maintenance costs compared to classic SaaS solutions: %[po prostu my (we want), czy jakos inaczej? wgl wymienienie tych aplikacji u nas ssie - sa dobrze napisane i musimy dobrze zaarguentowac dlaczego my robimy to lepiej lub ze pwa cos zmieni. tak napisali w review bo nie opisuje dlaczego musimy rozwijac nasza apke czy cos takiego
+        These tools are user-friendly, lightweight, and integrate well with other software, but they lack scalability and deep customization for larger operations. The above-mentioned software is mainly used to process orders and ship items from given warehouses. We want to investigate whether achieving similar functionality, as well as automating some operations (receiving and issuing products) is possible using PWA (Progressive Web Application). PWA technology offers several significant advantages that can translate into greater flexibility and lower maintenance costs compared to classic SaaS solutions:
         \begin{itemize}
             \item Lower maintenance costs - PWAs do not require maintaining separate versions for different platforms (e.g. iOS, Android, desktop).
-            \item Offline operation and resource savings - PWA can operate offline thanks to Service Workers technology, which means that basic functions are available even with limited internet access. This means that the server infrastructure can be less loaded.
-            \item \item Independence from the App Store and Play Store - No need to publish applications in app stores eliminates the associated costs and waiting time for acceptance.
+            \item Offline operation and resource savings - PWA can operate offline thanks to Service Workers technology, which means that basic functions are available even with limited internet access.
+            \item Independence from the App Store and Play Store - No need to publish applications in app stores eliminates the associated costs and waiting time for acceptance.
         \end{itemize}
 
         In the context of technology, barcode and QR code integration has become a cornerstone of modern inventory systems.
@@ -80,9 +77,9 @@
     }{
 
         Our project builds upon these insights to deliver a PWA-based inventory management system tailored for enterprises of varying sizes.
-        By integrating technologies such as Angular\cite{angular}, Spring Boot\cite{springboot}, PostgreSQL\cite{postgresql}, and AWS\cite{aws}, we aim to create a scalable, cost-effective, and accessible solution that combines the simplicity of SaaS tools with the power of ERP platforms. %moze cos dodac o dzialaniu pwa cachowaniu itp, czy wystarczy
+        By integrating technologies such as Angular\cite{angular}, Spring Boot\cite{springboot}, PostgreSQL\cite{postgresql}, and AWS\cite{aws}, we aim to create a scalable, cost-effective, and accessible solution that combines the simplicity of SaaS tools with the power of ERP platforms.
 
-        The implementation of the project proceeded as planned and was successful. We managed to include all important functionalities, and of use of PWA technology.%znaczy ja moge napisac o tym niby jak dziala pwa, ale prosze zebys ty to zrobil, bo no robiles bardziej ten service worker, zauwaz ze ten akapit to poiedzenie: tak zrobilismy dziala, nie klamie przeciez. wiec wypadalo by dodac jak i co (chyba)
+        The implementation of the project proceeded as planned and was successful. We managed to include all important functionalities, and of use of PWA technology.
     }
 }
 
@@ -91,7 +88,7 @@
         TBD
     }{
         Our use of PWA implement on multiple devices while maintaining a single code base. And at the same time it provides access to device sensors, like the camera or geolocation, which we used to add additional functionalities, such as scanning of bar codes and QR codes, and pinpointing the exact warehouse the user is currently stationed in, making it especially helpful for businesses with multiple warehouses.
-    } % usuniete
+    }
 }
 
 \newcommand{\TheFunctionalities}{
@@ -104,7 +101,7 @@
         \end{itemize}
     }{
         \begin{itemize}
-        \item Create, Read, Update and Delete (CRUD) operations, allowing for full modification of data stored in the database, such as: items, warehouses, inventory and item categories,  [stock? bos tocka chyba nie ma czy jakos inaczej to nazywamy]
+        \item Create, Read, Update and Delete (CRUD) operations, allowing for full modification of data stored in the database, such as: items, warehouses, inventory and item categories,
         \item Ability to scan barcodes and QR codes in an intuitive way to quickly access a specific product in stock,
         \item Inventory management across multiple warehouses,
         \item Management of users and their access to functionalities offered by the system layer,
@@ -143,12 +140,13 @@
             \item Secure Data Management:
             With Amazon Cognito for authentication and other security measures, the app protects user data and ensures resource access is authorized.
 
-            \item Modern Development Practices
+            \item Modern Development Practices: 
             Technologies like Terraform, Docker and Nginx highlight the use of efficient, modern tools for development, deployment, and infrastructure management.
 
-            \end{enumerate}
+            \item Testability: 
+            The software that was developed is comprehensively tested with over 80\% code coverage.
 
-            %this dodac przetestowanie kodu
+            \end{enumerate}
     }
 }
 
@@ -187,15 +185,15 @@
     }{
         \begin{itemize}
         \item Feasibility Demonstration:
-        The app proves the potential of PWAs for inventory management, levaraging their core features and capabilities. The app proves the potential of PWAs for inventory management, levaraging their core features and capabilities. %majac na uwadze review opisalbym bardziej co i jak, a przedewszystkim dlaczego, ja nie wiem dlaczego, jedynie to ze jedna na urzadzenia i skaner. w sumie moze przez to ze angular to dobrze wspiera i masz manifest masz apke pwa, ale firmy tego nie mainuja - dziwne
+        The app proves the potential of PWAs for small and medium sized companies thanks to the quick development process. Additionally the use of hardware sensors makes it a good solution for an inventory management application, allowing for quality of life features like scanning of the QR codes.
 
         \item Technical Design:
-        Built with scalability and security in mind, the system employs modern tools such as AWS and Terraform, aligning with enterprise-level best practices and conventions. %majac na uwadze review opisalbym bardziej co i jak
+        Built with scalability and security in mind, the system employs modern tools such as AWS and Terraform, aligning with enterprise-level best practices and conventions. It makes use of AWS infrastructure and through the usage of private subnets, appropriately applied security groups and Amazon Cognito the appliaction is secured and thanks to the application load balancing and auto-scaling the application is scalable without generating unnecessary costs.
         \end{itemize}
     }
 }
 
-\newcommand{\TheConclusions}{ %% jakies krotkie jest, ale nie wiem czy sie nam cos uda wymyslec
+\newcommand{\TheConclusions}{
     \iflanguage{polish}{
         Podsumowując, aplikacja którą zaprojektowaliśmy jest intuicyjna w użyciu i zapewnia podstawowe funkcjonalości wymagane przez pracowników magazynowych. Pozwoli ona na wydajniejsze i prostsze zarządzanie inwentarzem.
 
@@ -235,19 +233,10 @@
     
             \item keeping statistics and generating appropriate reports and charts based on the data
     
-            \item enabling integration with other systems to automate the processes of deliveries and releases from warehouses (adding generation of qr codes and invoices) or generating qr codes based on invoices. %widac chyba ktore dodalem 5 ostatnich badz krytyczny - still naprawic
+            \item enabling integration with other systems to automate the processes of deliveries and releases from warehouses (adding generation of QR codes and invoices) or generating QR codes based on invoices.
         \end{itemize}
     }
 }
-
-\newcommand{\TheAcknowledgments}{
-    \iflanguage{polish}{
-        TBD
-    }{
-        TBD % todo include acknowledgements
-    }
-}
-
 
 \begin{document}
 
@@ -271,9 +260,7 @@
 
 
 \section{\TheRelatedWorksHeader}
-
-    % \subsection{\TheRelatedWorksDescriptionHeader}
-        \TheRelatedWorksDescription
+    \TheRelatedWorksDescription
 
 
 \section{\TheResultsHeader}
@@ -299,33 +286,14 @@
     \subsection{\TheTechStackHeader}
         \TheTechStack
 
-    % \subsection{\TheAdditionalHighlightsHeader}
-    %     \TheAdditionalHighlights
+    \subsection{\TheAdditionalHighlightsHeader}
+        \TheAdditionalHighlights
 
 \section{\TheConclusionsHeader}
     \TheConclusions
 
 \section{\TheFurtherResearchHeader}
     \TheFurtherResearch
-
-% \section{\TheAcknowledgmentsHeader}
-%     \TheAcknowledgments
-
-% \begin{figure}[h]
-%     \centering
-%     \includegraphics[width=0.5\linewidth]{images/ZPI-Day-cmyk.pdf}
-%     \caption{To jest obrazek}
-%     \label{fig:zpi-day}
-% \end{figure}
-
-% \begin{itemize}
-%     \item First item \cite{lamport1994}.
-%     \item Second item \cite{rowling1997}.
-%     \item Third item.
-% \end{itemize}
-
-% \cite{lamport1994}
-% \cite{rowling1997}
 
 \bibliographystyle{plain}
 \bibliography{references}
