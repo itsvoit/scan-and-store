@@ -23,3 +23,4 @@ docs/documentation/sections/*.pdf
 *.bbl
 *.synctex.gz
 *.toc
+*.out

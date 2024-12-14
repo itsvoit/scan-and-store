@@ -34,6 +34,10 @@
 \RequirePackage{graphicx}
 \RequirePackage{subcaption}
 
+% images in place
+\RequirePackage{float}
+\RequirePackage{placeins}
+
 % for icons display
 \RequirePackage{array}
 \RequirePackage{calc}
@@ -181,6 +185,15 @@
 \setcounter{secnumdepth}{3}
 % Table of Contents Depth (ToC)
 \setcounter{tocdepth}{2}
+% make toc and references clickable
+\RequirePackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
 
 \newcommand{\PrintTechStackIcons}{
     \begin{center}
