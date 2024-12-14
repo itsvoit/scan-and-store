@@ -3,21 +3,36 @@
 
 \begin{document}
 \section{Założenia wstępne}
+    \subsection{Dobór techonologii}
+        Najważniejszą techonologią dla projektu jest \textbf{Progressive Web App} (PWA). 
+        
+        Aby wybrać framework do implementacji warstwy użytkownika (fronendu) zwrócono szczególną uwagę na dobre wsparcie dla technologii PWA i wybrano framework \textbf{Angular}.
 
-    W fazie wstępnej planowania projektu ustalone zostały następujące założenia:
-    \subsection*{Klient}
-        \begin{itemize}
-            \item Aplikacja wytwarzana jest dla jednego klienta
-            \item Klient posiada wiele magazynów
-            \item Klient chce być w stanie sprawdzić stan każdego z magazynów
-            \item Klient chce dać swoim pracownikom możliwość dodawania artykułów do stanu magazynu
-            \item Klient chce mieć wyłączny dostęp do dodawania i modyfikowania artykułów, magazynów i kategorii
-        \end{itemize} 
-    \subsection*{Aplikacja}
-        \begin{itemize}
-            \item Aplikacja musi wspierać techonolgię PWA
-            \item Aplikacja musi być instalowalna na różnych urządzeniach
-            \item Aplikacja musi wspierać skanowanie kodów kreskowych i kodów QR
-        \end{itemize}
+        Warstwę systemową (backend) zaimplementowano przy użyciu frameworku \textbf{Spring Boot}, który ma duże wsparcie dla zabezpieczeń (Spring Security) oraz prosty do zaimplementowania zestaw punktów końcowych (endpointów) jako REST API.
+
+        Jako bazę danych wybrano \textbf{PostgreSQL}.
+
+        Całość architektury aplikacji została wdrożona przy pomocy \textbf{Terraform HashiCorp} na serwery \textbf{Amazon Web Services} (AWS), co niskim kosztem pozwala na przetestowanie różnych rozwiązań bez konieczności samodzielnego utrzymania infrastruktury.
+    \subsection{Ograniczenia}
+        W fazie wstępnej planowania projektu przyjęto wyobrażonego klienta, który ustalił następujące założenia:
+        \subsubsection*{Klient}
+            \begin{itemize}
+                \item Aplikacja wytwarzana jest dla jednego klienta
+                \item Klient posiada wiele magazynów
+                \item Klient chce być w stanie sprawdzić stan każdego z magazynów
+                \item Klient chce dać swoim pracownikom możliwość dodawania artykułów do stanu magazynu
+                \item Klient chce mieć wyłączny dostęp do dodawania i modyfikowania artykułów, magazynów i kategorii
+            \end{itemize} 
+        \subsubsection*{Aplikacja}
+            \begin{itemize}
+                \item Aplikacja musi wspierać techonolgię PWA
+                \item Aplikacja musi być instalowalna na różnych urządzeniach
+                \item Aplikacja musi wspierać skanowanie kodów kreskowych i kodów QR
+                \item Aplikacja musi wspierać autoryzację użytkowników
+            \end{itemize}
+        \subsubsection*{Inne}
+            \begin{itemize}
+                \item Infrastruktura musi być skalowalna
+            \end{itemize}
 
 \end{document}
