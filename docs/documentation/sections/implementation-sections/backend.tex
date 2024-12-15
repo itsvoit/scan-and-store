@@ -4,19 +4,111 @@
 
 \begin{document}
 
-\subsection{Warstwa systemowa - backend}
+    \subsection{Warstwa systemowa - backend}
+
+    \subsubsection{Wstęp}
+    Warstwa systemowa została napisana z wykorzystaniem frameworka Spring Boot umożliwiającym szybkie tworzenie aplikacji w języku Java.
+    Dostarcza on w zestawie również dojrzałe narzędzia do testowania aplikacji, zarządzania zależnościami oraz konfiguracji.
+    Warstwa systemowa obsługuje żądania HTTP, komunikuje się z bazą danych i serwisami zewnętrznymi takimi jak Amazon S3 (Simple Storage Service).
+    Serwer służy jako bezstanowe REST API, co oznacza, że nie przechowuje sesji ani wewnętrznych stanów, co wpływa pozytywnie na skalowalność i bezpieczeństwo aplikacji.
+    Dodadkowo pełni rolę resource servera w architekturze OAuth2, co umożliwia uwierzytelnienie i autoryzację użytkowników za pomocą tokenów dostępu JWT (ang. JSON Web Token) oraz usługi Amazon Cognito, jako dostawcy tożsamości.
+
     \subsubsection{Struktura plików}
-        % todo
+    Kod źródłowy aplikacji znajduje się w katalogu \texttt{src}, podzielonym na dwie główne części: \texttt{main} oraz \texttt{test}.
+    Folder \texttt{main} zawiera implementację aplikacji, a \texttt{test} testy jednostkowe i integracyjne.
+    Struktura katalogów w folderze \texttt{main} została zorganizowana tematycznie dla utrzymania przejrzystości i modularności kodu:
+
+    \begin{itemize}
+        \item \textbf{configuration} - klasy konfiguracyjne aplikacji.
+        \begin{itemize}
+            \item Folder \texttt{s3} - konfiguracja integracji z Amazon S3.
+            \item Folder \texttt{security} - konfiguracja zabezpieczeń aplikacji, w tym ról użytkowników oraz ustawienia filtrów dla przychodzących zapytań HTTP osobno dla środowiska deweloperskiego i produkcyjnego.
+        \end{itemize}
+        \item \textbf{controller} - klasy kontrolerów definiują endpointy aplikcaji i są odpowiedzialne za obsługę żądań HTTP.
+        \item \textbf{exception} - mechanizmy i sposób obsługi wyjątków w aplikacji.
+        \begin{itemize}
+            \item Folder \texttt{custom} - niestandardowe wyjątki dla obsługi błędów.
+            \item Klasa \texttt{GlobalExceptionHandlingControllerAdvice} - globalna obsługa wyjątków.
+        \end{itemize}
+        \item \textbf{model} - definicje modeli danych.
+        \begin{itemize}
+            \item Folder \texttt{constant} - stałe dotyczące modeli danych.
+            \item Folder \texttt{constraint} - niestandardowe adnotacje walidacyjne.
+            \item Folder \texttt{entity} - klasy encji odpowiadające strukturom bazodanowym.
+            \item Folder \texttt{dto} - klasy DTO (Data Transfer Object) dla żądań HTTP i odpowiedzi.
+            \begin{itemize}
+                \item \texttt{request} - DTO dla żądań przychodzących do serwera.
+                \item \texttt{response} - DTO dla odpowiedzi HTTP zwracanych przez serwer.
+            \end{itemize}
+        \end{itemize}
+        \item \textbf{mapper} - klasy mapujące dane między warstwami aplikacji.
+        \begin{itemize}
+            \item Folder \texttt{custom} - niestandardowe mapowania pól.
+            \item Pozostałe klasy - mapowanie DTO na encje i odwrotnie.
+        \end{itemize}
+        \item \textbf{repository} - interfejsy repozytoriów komunikujące się z bazą danych.
+        \item \textbf{service} - klasy serwisowe implementujące logikę biznesową.
+        \item \textbf{util} - klasy narzędziowe i pomocnicze.
+        \begin{itemize}
+            \item Folder \texttt{model} - klasy i metody pomocnicze do obsługi modeli danych.
+            \item Pozostałe klasy - funkcje ogólnego zastosowania.
+        \end{itemize}
+        \item \textbf{resources} - pliki konfiguracyjne w formacie YAML dla poszczególnych środowisk.
+        \begin{itemize}
+            \item \texttt{application.yml} - główny plik konfiguracyjny aplikacji definiujący ustawienia podstawowe i domyślnie wspólne dla wszystkich środowisk.
+            \item \texttt{application-dev.yml}, \texttt{application-dev-h2.yml} - konfiguracja środowiska deweloperskiego, z ustawieniami, takimi jak debugowanie, automatyczne aktualizacje schematu bazy danych oraz dostęp do endpointów bez autoryzacji.
+            \item \texttt{application-prod.yml} - konfiguracja środowiska produkcyjnego, z zabezpieczeniami, takimi jak autoryzacja OAuth2 z JWT, ograniczenie dostępu do endpointów oraz logowanie na poziomie ostrzeżeń.
+        \end{itemize}
+    \end{itemize}
+
     \subsubsection{Konfiguracja}
-        % todo
+    W środowisku deweloperskim aplikacja umożliwia pełny dostęp do endpointów oraz włącza CORS dla lokalnych i testowych domen.
+    W środowisku produkcyjnym zabezpieczenia są bardziej restrykcyjne – dostęp do zasobów wymaga autoryzacji OAuth2, a jedynym publicznie dostępnym endpointem jest `/health\_check`, wymagany przez Application Load Balancer.
+
+    Spring Boot serwer działa jako bezstanowe REST API oraz resource server.
+    Aplikacja nie przechowuje sesji ani stanu użytkownika, a jedynie operuje na tokenach JWT w celu uwierzytelnienia przy każdym żądaniu i udzielenia dostępu do zasobów.
+    Mechanizmy zabezpieczeń CSRF są wyłączone, ponieważ aplikacja korzysta z tokenów JWT jako bezpiecznej metody uwierzytelnienia.
+
+    Uwierzytelnienie odbywa się na poziomie zapytania HTTP, gdzie serwer weryfikuje tożsamość użytkownika poprzez potwierdzenie jej z Amazon Cognito.
+    Przy pomyślnej weryfikacji, role użytkownika wyciągane są z tokena JWT, dzięki czemu możliwa jest autoryzacja użytkownika względem poszczególnych endpointów.
+
+    Integracja z Amazon S3 obejmuje generowanie presigned GET URL, które są generowane po stronie serwera i ograniczone czasowo, co zwiększa bezpieczeństwo i pozwala na bezpieczne udostępnianie zasobów.
+
     \subsubsection{Kontrolery}
-        % todo
+    Endpointy kontrolerów są zabezpieczone przed nieautoryzowanym dostępem za pomocą ról zawartych w tokenie JWT.
+    Do autoryzacji na warstwie endpointów kontrolerów zastosowano adnotację \texttt{@PreAuthorize}, wymagającą odpowiednich ról użytkownika, np. \texttt{ADMIN} dla operacji modyfikacji krytycznych danych.
+    Kontrolery zostały podzielone zgodnie z funkcjonalnościami. Przykładowo, \texttt{ItemController} obsługuje operacje CRUD dla przedmiotów, w tym zarządzanie powiązaniami z kategoriami oraz obrazami.
+    Pozostałe kontrolery mają podobną strukturę i działanie, skupiając się na specyficznych zasobach i logice biznesowej, przy zachowaniu spójnych mechanizmów uwierzytelnienia, autoryzacji i odpowiedzi HTTP.
+    Natomiast inny osobny kontroler \texttt{HealthCheckController} udostępnia publiczny endpoint \texttt{/health\_check} do monitorowania stanu aplikacji bez konieczności uwierzytelnienia dla Application Load Balancera.
+
     \subsubsection{Inne}
-        % todo
+    Warstwa serwisowa wykorzystuje adnotacje usprawniające i zabezpieczające spójność danych oraz współbieżność odczytu i zapisu danych, takie jak \texttt{@Transactional}, \texttt{@Lock}, czy \texttt{@Version}.
+    Zastosowanie transakcyjności oraz odpowiednich mechanizmów synchronizacji, takich jak tryb izolacji serializowalnej, zapewnia spójność danych i unika problemów związanych z równoczesnym dostępem do danych i ich modyfikacją.
+
+    Dane są walidowane dodatkowo za pomocą adnotacji na poziomie DTO oraz na poziomie encji.
+
+    Globalny mechanizm obsługi wyjątków (\texttt{GlobalExceptionHandler}) ułatwia obsługę błędów w aplikacji oraz zwracanie odpowiednich odpowiedzi HTTP w zależności od rodzaju błędu.
+
     \subsubsection{Testy}
-        % todo
+    Testy jednostkowe i integracyjne w katalogu \texttt{test} obejmują wszystkie istotne komponenty aplikacji, w tym serwisy, kontrolery, repozytoria, mechanizmy walidacyjne i autoryzacyjne.
+    Pokrycie kodu jest wysokie, na poziomie 90 procent, co zapewnia poprawność działania aplikacji w różnych scenariuszach, w tym przypadkach brzegowych i błędnych, w celu zapewnienia niezawodności i bezpieczeństwa.
+
     \subsubsection{Konteneryzacja - Docker}
-        % todo
+    Aplikacja została skonteneryzowana za pomocą Dockera, co umożliwia łatwe uruchomienie aplikacji w izolowanym środowisku kontenerowym:
+
+    \begin{itemize}
+        \item Plik \texttt{Dockerfile} wykorzystuje wieloetapowe budowanie, optymalizując proces tworzenia obrazu. Dzięki temu obraz jest lekki i zawiera tylko niezbędne zależności.
+        Na pierwszym etapie (cache) pobierane są zależności Gradle na podstawie pliku \texttt{build.gradle} i cache’owane, co przyspiesza kolejne kompilacje.
+        Na drugim etapie (builder) aplikacja jest budowana jako plik JAR za pomocą polecenia \texttt{gradle bootJar}.
+        Na ostatnim etapie (runner) uruchamiana jest aplikacja na lekkim obrazie \texttt{amazoncorretto:21-alpine} jako użytkownik nieuprzywilejowany, co zwiększa bezpieczeństwo, z domyślnie wystawionym portem 8080.
+        \item Plik \texttt{docker-compose.yml} definiuje dwa serwisy, co umożliwia uruchomienie aplikacji wraz z bazą danych PostgreSQL na maszynie lokalnej w celach deweloperskich, testowych lub produkcyjnych.
+        \begin{enumerate}
+            \item \texttt{springboot} - aplikacja Spring Boot zbudowana na podstawie pliku \texttt{Dockerfile} z odpowiednimi zmiennymi środowiskowymi, takimi jak profil aplikacji, baza danych PostgreSQL, integracja z Amazon S3 i Cognito.
+            \item \texttt{postgresql\_database} - baza danych PostgreSQL z mechanizmem \texttt{healthcheck} sprawdzającym dostępność bazy danych i trwały wolumen na dane.
+        \end{enumerate}
+        \item Plik \texttt{.env.template} zawiera nazwy zmiennych środowiskowych, które są wymagane do uruchomienia aplikacji.
+        \item Plik \texttt{.dockerignore} ogranicza kontekst budowania obrazu, ignorując zbędne pliki, co przyspiesza proces budowania obrazu.
+    \end{itemize}
+    Całość konfiguracji pomaga oraz umożliwia szybkie, niezawodne i powtarzalne uruchamianie aplikacji w kontenerach, co pozwala na łatwe testowanie i rozwijanie aplikacji w różnych środowiskach.
 
 \end{document}
-
