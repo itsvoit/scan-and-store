@@ -177,6 +177,11 @@
 \let\oldsection\section
 \renewcommand\section{\clearpage\oldsection}
 
+% Numbering of sections depth -> sections below set depth will not have numbering
+\setcounter{secnumdepth}{3}
+% Table of Contents Depth (ToC)
+\setcounter{tocdepth}{2}
+
 \newcommand{\PrintTechStackIcons}{
     \begin{center}
         \foreach \x in \@techStackIcons{
