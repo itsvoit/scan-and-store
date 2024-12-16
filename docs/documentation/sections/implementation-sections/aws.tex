@@ -34,38 +34,5 @@
             \item \texttt{sns.tf} - definicja Simple Notification Service (SNS) do wysyłania powiadomień na dany temat do jego subskrybentów
             \item \texttt{lambda.tf} - definiuje funkcję Lambda napisaną w języku TypeScript, uruchamianą okresowo za pomocą alarmów CloudWatch. Funkcja ta pobiera dane z bazy danych i powiadamia subskrybentów, z odpowiednimi rolami zdefiniowanymi w Cognito, na określony temat SNS poprzez e-mail
         \end{itemize}
-    \subsubsection{Wykorzystane zasoby}
-        \paragraph{Amazon Virtual Private Cloud (VPC):}
-        Amazon VPC pozwala na tworzenie izolowanej, logicznie odseparowanej sieci w chmurze AWS. Umożliwia pełną kontrolę nad konfiguracją sieci, w tym zakresami adresów IP, podsieciami, trasami, bramami i konfiguracją reguł zapory sieciowej.
-
-        \paragraph{Amazon Cognito:}
-        Amazon Cognito umożliwia zarządzanie tożsamościami i autoryzacją użytkowników w aplikacjach internetowych oraz mobilnych. Zapewnia obsługę logowania użytkowników, synchronizacji danych oraz integracji z dostawcami tożsamości. Umożliwia również tworzenie grup użytkowników i zarządzanie rolami.
-
-        \paragraph{Amazon Relational Database Service (RDS):}
-        Amazon RDS to zarządzana usługa baz danych, która umożliwia łatwe konfigurowanie, działanie i skalowanie relacyjnych baz danych. Obsługuje popularne silniki, takie jak MySQL, \textit{PostgreSQL}, MariaDB, Oracle oraz SQL Server.
-
-        \paragraph{Amazon Application Load Balancer (ALB):}
-        Amazon ALB to rodzaj load balancera, który automatycznie rozdziela ruch aplikacji na wiele celów, takich jak kontenery, instancje EC2 lub funkcje Lambda. Jest zoptymalizowany do obsługi ruchu HTTP/HTTPS oraz oferuje zaawansowane funkcje, takie jak routing oparte na zawartości czy target groups.
-
-        \paragraph{Amazon Elastic Container Service (ECS):}
-        Amazon ECS to zarządzana usługa orkiestracji kontenerów, która umożliwia uruchamianie, zatrzymywanie i zarządzanie kontenerami Docker na klastrach instancji EC2 lub w ramach AWS Fargate (serverless). Jest w pełni zintegrowana z innymi usługami AWS.
-
-        \paragraph{Amazon Certificate Manager (ACM):}
-        Amazon ACM umożliwia łatwe zarządzanie certyfikatami SSL/TLS. Automatyzuje procesy wydawania, odnawiania i wdrażania certyfikatów dla aplikacji działających w AWS, eliminując potrzebę ręcznej konfiguracji.
-
-        \paragraph{Amazon CloudWatch:}
-        Amazon CloudWatch to usługa monitorowania zasobów i aplikacji AWS. Umożliwia zbieranie, przeglądanie i analizowanie metryk, logów oraz ustawianie alarmów. Zapewnia również możliwość automatycznej reakcji na zmiany wydajności systemu.
-
-        \paragraph{Amazon Simple Storage Service (S3):}
-        Amazon S3 to skalowalna usługa magazynowania obiektów, która pozwala na przechowywanie dowolnej ilości danych. Jest idealna do tworzenia kopii zapasowych, archiwizacji, hostowania zasobów statycznych i integrowania z aplikacjami chmurowymi.
-
-        \paragraph{AWS Auto Scaling:}
-        AWS Auto Scaling automatycznie dostosowuje liczbę zasobów obliczeniowych (np. kontenerów Fargate) w odpowiedzi na zmieniające się obciążenie. Zapewnia elastyczność, wysoką dostępność i optymalizację kosztów poprzez skalowanie w górę lub w dół w oparciu o zdefiniowane zasady.
-
-        \paragraph{Amazon Simple Notification Service (SNS):}
-        Amazon SNS to usługa zarządzania komunikatami, która umożliwia publikowanie i subskrybowanie tematów. Umożliwia wysyłanie powiadomień do wielu odbiorców, takich jak e-maile, SMS-y, aplikacje mobilne czy inne usługi AWS.
-
-        \paragraph{AWS Lambda:}
-        Amazon Lambda to usługa obliczeniowa, która uruchamia kod w odpowiedzi na zdarzenia i zarządza zasobami obliczeniowymi w sposób zautomatyzowany. Pozwala na tworzenie funkcji serwerless, które są skalowalne, elastyczne i nie wymagają zarządzania infrastrukturą.
 
 \end{document}

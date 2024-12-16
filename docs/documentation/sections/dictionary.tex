@@ -4,39 +4,49 @@
 \begin{document}
     \section{Słownik pojęć}
     \begin{itemize}
-        \item API - zestaw poleceń udostępnianych osobom korzystających z danej aplikacji
-        \item Aplikacja natywna/dedykowana - programy zaprojektowane i stworzone z myślą o konkretnej platformie mobilnej, takiej jak Android lub iOS
-        \item Aplikacja webowa - inaczej aplikacja internetowa, program kompuerowy, który pracuje na serwerze i komunikuje się poprzez sieć z hostem użytkownika komputera
-        \item backend - wastwa systemowa; moduł, w którym została zaimplementowana warstwa systemowa
-        \item cache - pamięć podręczna urządzenia; czasownik określający zapis danych do pamięci podręcznej urządzenia
-        \item CORS - mechanizm umożliwiający współdzielenie zasobów pomiędzy serwerami znajdującymi się w różnych domenach
-        \item CRUD - cztery podstawowe funkcje w aplikacjach korzystających z pamięci trwałej, które umożliwiają zarządzanie nią
-        \item CSRF - atak polegający na wykorzystaniu zaufania użytkownika do serwisu internetowego w celu wykonania nieautoryzowanych działań
-        \item CSS - język opisujący styl serwisu internetowego; jest zbiorem reguł opisującym poszczególne elementy
-        \item Docker\cite{docker} - otwarte oprogramowanie służące do konteneryzacji, działające jako platforma do tworzenia, wdrażania i uruchamiania aplikacji rozproszonych.
-        Narzędzie to pozwala umieścić program oraz jego zależności w lekkim, przenośnym, wirtualnym kontenerze, który można uruchomić na prawie każdym serwerze z systemem opartym na jądrze Linux
-        \item DTO - w programowaniu obiektowym, obiekt który przechowuje tylko pola publiczne, bez metod, służący do przesyłania danych pomiędzy warstwami aplikacji lub systemami
-        \item EAN - w tym dokumencie w wersji 13-cyfrowej (EAN 13), popularny kod kreskowy
-        \item E-commerce - rodzaj handlu prowadzonego w internecie
-        \item Endpoint - adres URL, pod którym dostępne są zasoby w API
-        \item Framework - biblioteka narzędzi wspomagających implementację danego rozwiązania w danym języku
-        \item frontend - warstwa użytkownika; moduł, w którym została zaimplementowana warstwa użytkownika
-        \item HTTP - protokół określający reguły przesyłania zasobów i zasady komunikacji na drodzę klient - serwer. Protokół HTTP definiuje znormalizowany sposób w jakim informacje są udostępniane, przetwarzane i odczytywane przez serwer oraz jak wygląda odpowiedź na żądania. \cite{ks-http}
-        \item IaC - to proces zarządzania zasobami centrum danych komputerowych i ich udostępniania za pośrednictwem plików definicji nadających się do odczytu maszynowego, a nie za pośrednictwem fizycznej konfiguracji sprzętu lub interaktywnych narzędzi konfiguracyjnych
-        \item iOS - mobilny system operacyjny opracowany przez firmę Apple Inc.
-        \item JWT - otwarty standard przemysłowy definiujący sposób wymiany danych w formie JSON pomiędzy stronami, stosowany m.in. w celu autoryzacji
-        \item localstorage / local storage - mechanizm zapisu danych w przeglądarce, pozwala przechowywać dane bez określnej daty wygaśnięcia
-        \item OAuth2 - standardowy protokół autoryzacji dostępu, skoncentrowany na ułatwieniu użytkownikowi przepływu autoryzacji dla aplikacji
-        \item Poziom izolacji serializacji - poziom izolacji transakcji w bazie danych, który zapewnia, że transakcje są wykonywane w sposób sekwencyjny, eliminując możliwość wystąpienia konfliktów między równocześnie wykonywanymi transakcjami
-        \item Progressive Web App - progresywna aplikacja internetowa uruchamiana tak jak zwykła strona internetowa, ale umożliwiająca stworzenie wrażenia działania jak natywna aplikacja mobilna lub aplikacja desktopowa. PWA może zostać zainstalowana, wtedy może posiadać własną ikonę na pulpicie oraz być niezależna od przeglądarki.
-        \item QR - alfanumeryczny, dwuwymiarowy, matrycowy, kwadratowy kod graficzny, opracowany przez japońskie przedsiębiorstwo Denso Wave
-        \item Presigned GET URL - link do zasobu w chmurze, który pozwala na pobranie zasobu bez konieczności autoryzacji, z ograniczeniem czasowym.
-        \item Responsywność - responsywność aplikacji PWA odnosi się do jej zdolności do dostosowywania się do różnych rozmiarów ekranów, rozdzielczości i urządzeń, takich jak smartfony, tablety, laptopy czy komputery stacjonarne. Oznacza to, że aplikacja zapewnia spójne i optymalne doświadczenie użytkownika bez względu na platformę czy urządzenie.
-        \item Resource server - serwer udostępniający chronione zasoby i zdolny do akceptowania i odpowiadania na żądania dotyczące chronionych zasobów przy użyciu tokenów dostępu
-        \item REST - zbiór zasad i wytycznych o tym jak budować API aplikacji webowych
-        \item REST API - API trzymające się zasad REST
-        \item S3 -  internetowy nośnik danych firmy Amazon, ma prosty w obsłudze interfejs WWW, który umożliwia dostęp do przechowywanych danych i zarządzanie nimi
-        \item Service Worker - skrypt działający w tle przeglądarki, który pełni rolę pośrednika między aplikacją a siecią, a także umożliwia wykonywanie określonych zadań bez aktywnej interakcji użytkownika. Jest jednym z kluczowych elementów PWA, który pozwala na realizację funkcji takich jak tryb offline, buforowanie zasobów oraz wysyłanie powiadomień push
-        \item Urządzenia mobilne - Smartfon, tablet
+        \item \textbf{ACM} - (Amazon) ACM umożliwia łatwe zarządzanie certyfikatami SSL/TLS. Automatyzuje procesy wydawania, odnawiania i wdrażania certyfikatów dla aplikacji działających w AWS, eliminując potrzebę ręcznej konfiguracji
+        \item \textbf{ALB} - (Amazon) ALB to rodzaj load balancera, który automatycznie rozdziela ruch aplikacji na wiele celów, takich jak kontenery, instancje EC2 lub funkcje Lambda. Jest zoptymalizowany do obsługi ruchu HTTP/HTTPS oraz oferuje zaawansowane funkcje, takie jak routing oparte na zawartości czy target groups.
+        \item \textbf{Amazon Cognito} - umożliwia zarządzanie tożsamościami i autoryzacją użytkowników w aplikacjach internetowych oraz mobilnych. Zapewnia obsługę logowania użytkowników, synchronizacji danych oraz integracji z dostawcami tożsamości. Umożliwia również tworzenie grup użytkowników i zarządzanie rolami
+        \item \textbf{Amazon CloudWatch} - (Amazon) CloudWatch to usługa monitorowania zasobów i aplikacji AWS. Umożliwia zbieranie, przeglądanie i analizowanie metryk, logów oraz ustawianie alarmów. Zapewnia również możliwość automatycznej reakcji na zmiany wydajności systemu.
+        \item \textbf{API} - zestaw poleceń udostępnianych osobom korzystających z danej aplikacji
+        \item \textbf{Aplikacja natywna/dedykowana} - programy zaprojektowane i stworzone z myślą o konkretnej platformie mobilnej, takiej jak Android lub iOS
+        \item \textbf{Aplikacja webowa} - inaczej aplikacja internetowa, program kompuerowy, który pracuje na serwerze i komunikuje się poprzez sieć z hostem użytkownika komputera
+        \item \textbf{ASNS} - (Amazon) SNS to usługa zarządzania komunikatami, która umożliwia publikowanie i subskrybowanie tematów. Umożliwia wysyłanie powiadomień do wielu odbiorców, takich jak e-maile, SMS-y, aplikacje mobilne czy inne usługi AWS
+        \item \textbf{AWS} - firrma udostępniająca publicznie platformę chmurową oraz hostingowy serwis internetowy, będąca jednostką zależną firmy Amazon, udostępniająca usługi dostępne w sieci Web
+        \item \textbf{AWS} Auto Scaling - AWS Auto Scaling automatycznie dostosowuje liczbę zasobów obliczeniowych (np. kontenerów Fargate) w odpowiedzi na zmieniające się obciążenie. Zapewnia elastyczność, wysoką dostępność i optymalizację kosztów poprzez skalowanie w górę lub w dół w oparciu o zdefiniowane zasady
+        \item \textbf{AWS Lambda} - Amazon Lambda to usługa obliczeniowa, która uruchamia kod w odpowiedzi na zdarzenia i zarządza zasobami obliczeniowymi w sposób zautomatyzowany. Pozwala na tworzenie funkcji serwerless, które są skalowalne, elastyczne i nie wymagają zarządzania infrastrukturą
+        \item \textbf{backend} - wastwa systemowa; moduł, w którym została zaimplementowana warstwa systemowa
+        \item \textbf{cache} - pamięć podręczna urządzenia; czasownik określający zapis danych do pamięci podręcznej urządzenia
+        \item \textbf{CORS} - mechanizm umożliwiający współdzielenie zasobów pomiędzy serwerami znajdującymi się w różnych domenach
+        \item \textbf{CRUD} - cztery podstawowe funkcje w aplikacjach korzystających z pamięci trwałej, które umożliwiają zarządzanie nią
+        \item \textbf{CSRF} - atak polegający na wykorzystaniu zaufania użytkownika do serwisu internetowego w celu wykonania nieautoryzowanych działań
+        \item \textbf{CSS} - język opisujący styl serwisu internetowego; jest zbiorem reguł opisującym poszczególne elementy
+        \item \textbf{Docker\cite{docker}} - otwarte oprogramowanie służące do konteneryzacji, działające jako platforma do tworzenia, wdrażania i uruchamiania aplikacji rozproszonych. Narzędzie to pozwala umieścić program oraz jego zależności w lekkim, przenośnym, wirtualnym kontenerze, który można uruchomić na prawie każdym serwerze z systemem opartym na jądrze Linux
+        \item \textbf{DTO} - w programowaniu obiektowym, obiekt który przechowuje tylko pola publiczne, bez metod, służący do przesyłania danych pomiędzy warstwami aplikacji lub systemami
+        \item \textbf{EAN} - w tym dokumencie w wersji 13-cyfrowej (EAN 13), popularny kod kreskowy
+        \item \textbf{Ecommerce} - rodzaj handlu prowadzonego w internecie
+        \item \textbf{ECS} - (Amazon) ECS to zarządzana usługa orkiestracji kontenerów, która umożliwia uruchamianie, zatrzymywanie i zarządzanie kontenerami Docker na klastrach instancji EC2 lub w ramach AWS Fargate (serverless). Jest w pełni zintegrowana z innymi usługami AWS.
+        \item \textbf{Endpoint} - adres URL, pod którym dostępne są zasoby w API
+        \item \textbf{Framework} - biblioteka narzędzi wspomagających implementację danego rozwiązania w danym języku
+        \item \textbf{frontend} - warstwa użytkownika; moduł, w którym została zaimplementowana warstwa użytkownika
+        \item \textbf{HTTP} - protokół określający reguły przesyłania zasobów i zasady komunikacji na drodzę klient - serwer. Protokół HTTP definiuje znormalizowany sposób w jakim informacje są udostępniane, przetwarzane i odczytywane przez serwer oraz jak wygląda odpowiedź na żądania. \cite{ks-http}
+        \item \textbf{IaC} - to proces zarządzania zasobami centrum danych komputerowych i ich udostępniania za pośrednictwem plików definicji nadających się do odczytu maszynowego, a nie za pośrednictwem fizycznej konfiguracji sprzętu lub interaktywnych narzędzi konfiguracyjnych
+        \item \textbf{iOS} - mobilny system operacyjny opracowany przez firmę Apple Inc.
+        \item \textbf{JWT} - otwarty standard przemysłowy definiujący sposób wymiany danych w formie JSON pomiędzy stronami, stosowany m.in. w celu autoryzacji
+        \item \textbf{localstorage / local storage} - mechanizm zapisu danych w przeglądarce, pozwala przechowywać dane bez określnej daty wygaśnięcia
+        \item \textbf{OAuth2} - standardowy protokół autoryzacji dostępu, skoncentrowany na ułatwieniu użytkownikowi przepływu autoryzacji dla aplikacji
+        \item \textbf{Poziom izolacji serializacji} - poziom izolacji transakcji w bazie danych, który zapewnia, że transakcje są wykonywane w sposób sekwencyjny, eliminując możliwość wystąpienia konfliktów między równocześnie wykonywanymi transakcjami
+        \item \textbf{Progressive Web App} - progresywna aplikacja internetowa uruchamiana tak jak zwykła strona internetowa, ale umożliwiająca stworzenie wrażenia działania jak natywna aplikacja mobilna lub aplikacja desktopowa. PWA może zostać zainstalowana, wtedy może posiadać własną ikonę na pulpicie oraz być niezależna od przeglądarki.
+        \item \textbf{QR} - alfanumeryczny, dwuwymiarowy, matrycowy, kwadratowy kod graficzny, opracowany przez japońskie przedsiębiorstwo Denso Wave
+        \item \textbf{Presigned GET URL} - link do zasobu w chmurze, który pozwala na pobranie zasobu bez konieczności autoryzacji, z ograniczeniem czasowym.
+        \item \textbf{RDS} - (Amazon) RDS to zarządzana usługa baz danych, która umożliwia łatwe konfigurowanie, działanie i skalowanie relacyjnych baz danych. Obsługuje popularne silniki, takie jak MySQL, PostgreSQL, MariaDB, Oracle oraz SQL Server.
+        \item \textbf{Responsywność} - responsywność aplikacji PWA odnosi się do jej zdolności do dostosowywania się do różnych rozmiarów ekranów, rozdzielczości i urządzeń, takich jak smartfony, tablety, laptopy czy komputery stacjonarne. Oznacza to, że aplikacja zapewnia spójne i optymalne doświadczenie użytkownika bez względu na platformę czy urządzenie.
+        \item \textbf{Resource server} - serwer udostępniający chronione zasoby i zdolny do akceptowania i odpowiadania na żądania dotyczące chronionych zasobów przy użyciu tokenów dostępu
+        \item \textbf{REST} - zbiór zasad i wytycznych o tym jak budować API aplikacji webowych
+        \item \textbf{REST API} - API trzymające się zasad REST
+        \item \textbf{S3} - (Amazon) S3 internetowy nośnik danych firmy Amazon, ma prosty w obsłudze interfejs WWW, który umożliwia dostęp do przechowywanych danych i zarządzanie nimi
+        \item \textbf{Service Worker} - skrypt działający w tle przeglądarki, który pełni rolę pośrednika między aplikacją a siecią, a także umożliwia wykonywanie określonych zadań bez aktywnej interakcji użytkownika. Jest jednym z kluczowych elementów PWA, który pozwala na realizację funkcji takich jak tryb offline, buforowanie zasobów oraz wysyłanie powiadomień push
+        \item \textbf{Urządzenia mobilne} - Smartfon, tablet
+        \item \textbf{VPC} - (Amazon) VPC pozwala na tworzenie izolowanej, logicznie odseparowanej sieci w chmurze AWS. Umożliwia pełną kontrolę nad konfiguracją sieci, w tym zakresami adresów IP, podsieciami, trasami, bramami i konfiguracją reguł zapory sieciowej.
     \end{itemize}
 \end{document}
