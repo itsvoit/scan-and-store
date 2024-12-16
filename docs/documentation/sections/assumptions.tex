@@ -4,9 +4,11 @@
 \begin{document}
 \section{Założenia wstępne}
     \subsection{Dobór techonologii}
-        Najważniejszą techonologią dla projektu jest \textbf{Progressive Web App} (PWA)\cite{pwa}. 
-        
-        Aby wybrać framework do implementacji warstwy użytkownika (fronendu) zwrócono szczególną uwagę na dobre wsparcie dla technologii PWA i wybrano framework \textbf{Angular}\cite{angular}. Dzięki swojej kompleksowości, wbudowanym narzędziom i ekosystemowi, Angular umożliwia szybkie i efektywne budowanie aplikacji PWA spełniające nowoczesne wymagania użytkowników.
+        Najważniejszą technologią dla projektu jest \textbf{Progressive Web App} (PWA)\cite{pwa}. Celem opracowywanego programu było zapewnienie, aby aplikacja w ramach technologii PWA działała zarówno jako aplikacja webowa, jak i natywna, oferując jednocześnie możliwość rozbudowy o funkcje przydatne użytkownikom oraz te występujące u konkurencji. Kluczowym założeniem projektu było zapewnienie, aby doświadczenie użytkownika podczas korzystania z aplikacji PWA było zbliżone do odczuć płynących z użytkowania aplikacji natywnych.
+
+        W ramach projektu zaplanowano implementację funkcjonalności wyróżniających aplikację na tle konkurencji, takich jak skanowanie kodów EAN i QR oraz wykrywanie lokalizacji urządzenia. Te elementy mają nie tylko zwiększyć wygodę użytkowania, ale także wpłynąć na efektywność procesów magazynowych. Dzięki wykorzystaniu lokalizacji urządzenia system automatycznie identyfikuje magazyn, w którym znajduje się pracownik, eliminując konieczność manualnego wyboru. Funkcjonalność ta minimalizuje błędy ludzkie, takie jak niepoprawne przeliczanie towaru czy błędne definiowanie lokalizacji magazynowej. Ważnym aspektem aplikacji SNS jest także zapewnienie wysokiego poziomu bezpieczeństwa oraz redukcja błędów związanych z obsługą systemu.
+
+        Podczas wyboru frameworka do implementacji warstwy użytkownika (frontendu) kluczowym kryterium było wsparcie dla technologii PWA. Ostatecznie wybrano \textbf{Angular}\cite{angular}. Framework ten, dzięki swojej kompleksowości, wbudowanym narzędziom oraz rozbudowanemu ekosystemowi, umożliwia szybkie i efektywne tworzenie nowoczesnych aplikacji PWA spełniających wysokie wymagania użytkowników.
 
         Warstwę systemową (backend) zaimplementowano przy użyciu frameworku \textbf{Spring Boot}\cite{springboot}, który ma duże wsparcie dla zabezpieczeń (Spring Security) oraz prosty do zaimplementowania zestaw punktów końcowych (endpointów) jako REST API.
 
