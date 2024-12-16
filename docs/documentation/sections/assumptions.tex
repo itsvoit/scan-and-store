@@ -6,11 +6,11 @@
     \subsection{Dobór techonologii}
         Najważniejszą techonologią dla projektu jest \textbf{Progressive Web App} (PWA). 
         
-        Aby wybrać framework do implementacji warstwy użytkownika (fronendu) zwrócono szczególną uwagę na dobre wsparcie dla technologii PWA i wybrano framework \textbf{Angular}.
+        Aby wybrać framework do implementacji warstwy użytkownika (fronendu) zwrócono szczególną uwagę na dobre wsparcie dla technologii PWA i wybrano framework \textbf{Angular}. Dzięki swojej kompleksowości, wbudowanym narzędziom i ekosystemowi, Angular umożliwia szybkie i efektywne budowanie aplikacji PWA spełniające nowoczesne wymagania użytkowników.
 
         Warstwę systemową (backend) zaimplementowano przy użyciu frameworku \textbf{Spring Boot}, który ma duże wsparcie dla zabezpieczeń (Spring Security) oraz prosty do zaimplementowania zestaw punktów końcowych (endpointów) jako REST API.
 
-        Jako bazę danych wybrano \textbf{PostgreSQL}.
+        Jako bazę danych wybrano \textbf{PostgreSQL}. Zespół nie miał doświadczenia z nierelacyjnymi bazami danych, tylko taka alternatywa była dostępna na AWS.
 
         Całość architektury aplikacji została wdrożona przy pomocy \textbf{Terraform HashiCorp} na serwery \textbf{Amazon Web Services} (AWS), co niskim kosztem pozwala na przetestowanie różnych rozwiązań bez konieczności samodzielnego utrzymania infrastruktury.
     \subsection{Ograniczenia}
@@ -26,6 +26,7 @@
         \subsubsection*{Aplikacja}
             \begin{itemize}
                 \item Aplikacja musi wspierać techonolgię PWA
+                \item Aplikacja musi działać na popularnych przeglądarkach
                 \item Aplikacja musi być instalowalna na różnych urządzeniach
                 \item Aplikacja musi wspierać skanowanie kodów kreskowych i kodów QR
                 \item Aplikacja musi wspierać autoryzację użytkowników
@@ -33,6 +34,7 @@
         \subsubsection*{Inne}
             \begin{itemize}
                 \item Infrastruktura musi być skalowalna
+                \item Infrastruktura musi być zabezpieczona
             \end{itemize}
 
 \end{document}

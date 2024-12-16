@@ -5,6 +5,13 @@
 
     \subsection{Warstwa użytkownika - frontend}
 
+    \subsubsection{Wstęp}
+    Warstwa użytkownika została zrealizowana przy użyciu frameworka Angular, który umożliwia szybkie tworzenie dynamicznych i responsywnych aplikacji webowych w języku TypeScript. Angular dostarcza zaawansowane narzędzia do zarządzania stanem aplikacji, budowania komponentów wielokrotnego użytku oraz implementacji nawigacji i dynamicznych interfejsów użytkownika.
+    Aplikacja komunikuje się z warstwą systemową poprzez REST API, wysyłając żądania HTTP i odbierając odpowiedzi w formacie JSON. Obsługuje również integrację z usługą Amazon Cognito w celu autoryzacji i uwierzytelniania użytkowników, wykorzystując tokeny dostępu JWT.
+    Dzięki integracji z Cognito, aplikacja umożliwia logowanie i zarządzanie sesjami użytkowników w sposób bezpieczny i zgodny z OAuth2. Przekierowywanie użytkownika do widoków chronionych odbywa się na podstawie posiadania poprawnego tokenu.
+    Komunikacja z zasobami w Amazon S3 (np. przesyłanie lub pobieranie plików) odbywa się przy wykorzystaniu predefiniowanych adresów URL (pre-signed URLs), które są generowane przez backend. Dzięki temu frontend nie ma bezpośredniego dostępu do zasobów w S3, co podnosi bezpieczeństwo aplikacji.
+    Dzięki zastosowaniu Angulara i TypeScript warstwa użytkownika jest modularna, łatwa w utrzymaniu oraz zorientowana na dostarczenie intuicyjnego i płynnego doświadczenia dla użytkownika końcowego.
+
     \subsubsection{Struktura plików}
     Warstwa użytkownika została zaimplementowana przy pomocy frameworku Angular\cite{angular} opartego o język TypeScript (TS). Strukturę plików przedstawia Rysunek \ref{fig:frontend-repo-structure}.
 
@@ -25,16 +32,48 @@
         \label{fig:frontend-repo-structure}
     \end{figure}
 
-    Aplikacja jest tworzona przy pomocy komponentów. Każdy komponent składa się ze skryptu TS, pliku stylu SCSS oraz pliku układu HTML. Dodatkowo niektóre komponenty korzystają z serwisów napisanych w języku TypeScript. Komponenty graficzne zazwyczaj mogą być wykorzystywane wiele razy i są one umieszczone w folderze \emph{shared}. Komponenty jednokrotne są umieszczone w folderze features i zawierają one kokretne implementacje poszczególnych widoków.
+    Aplikacja jest tworzona przy pomocy komponentów. Każdy komponent składa się ze skryptu TS, pliku stylu SCSS oraz pliku układu HTML. Dodatkowo niektóre komponenty korzystają z serwisów napisanych w języku TypeScript. 
+
+    \begin{itemize}
+        \item \textbf{app} - folder, w którym znajduje się prawie cała logika aplikacji
+        \begin{itemize}
+            \item \textbf{core} - przechowywane są w nim serwisy, interceptory i guardy. Kod, który używany jest w całej aplikacji
+            \begin{itemize}
+                \item \textbf{guards} -  guardy za pomocą których kontrolowany jest dostęp użytkowników do poszczególnych stron. 
+                \item \textbf{interceptors} - interceptory pozwalają przechwytywać i modyfikować żądania oraz odpowiedzi HTTP. 
+                \item \textbf{services} - serwisy do obsługi ról użytkowników (definiujące dostęp do funkcjonalności) oraz serwis obsługujący cognito
+                \item \textbf{utils} - serwis, za pomocą którego zdjęcia są odpowiednio cachowane
+            \end{itemize}
+            \item \textbf{features} - folder, w którym umiejscowione są konkretne implementacje poszczególnych widoków
+            \begin{itemize}
+                \item \textbf{category} - konkretne implementacje poszczególnych widoków dotyczących kategorii
+                \item \textbf{item} - konkretne implementacje poszczególnych widoków dotyczących produktów
+                \item \textbf{page-landing} - konkretna implementacja awidoku dotyczącego strony startowej
+                \item \textbf{scanner} - konkretna implementacja widoku dotyczącego strony ze skanerem
+                \item \textbf{services} - implementacja serwisu z którego korzystam w poszczególnych widokach do obsługi localstorage
+                \item \textbf{settings} - konkretna implementacja widoku dotyczącego strony z ustawieniami
+                \item \textbf{stock} - konkretne implementacje poszczególnych widoków dotyczących stanu magazynów
+                \item \textbf{warehouse} - konkretne implementacje poszczególnych widoków dotyczących magazynów
+            \end{itemize}
+            \item \textbf{mocks} - folder, w którym przechowuje się klasy modeli wykorzystywane do testowania
+            \item \textbf{shared} - komponenty graficzne zazwyczaj wykorzystywane wiele razy: strony z błedami oraz podkomponenty używane w wielu widokach  
+        \end{itemize}
+        \item \textbf{assets} - folder, w którym znajdują wykorzystane asety w aplikacji
+        \begin{itemize}
+            \item \textbf{logo} - folder, w którym są umieszczone loga o różnych rozmiarach potrzebne do stworzenia manifestu potrzebnego do działania PWA
+            \item \textbf{icons} - folder, w którym są przechowywane ikonki wykorzystane podczas tworzenia aplikacji
+        \end{itemize}
+        \item \textbf{environment} - folder, w którym znajduje się environment.ts - plik z zdefiniowanymi zmiennymi środowiskowymi
+    \end{itemize}
 
     \subsubsection{Widoki}
-    % todo
+    Warstwa wizualna tworzona jest za pomocą rozszerzonego przez Angular HTML. Styl definiowany jest za pomocą plików SCSS - rozszerzonym CSS. Widoki są tak zaprojektowane w taki sposób, aby oznaczały się wygodą użytkowania oraz odpowiednią skalownością na różnych rozmiarach ekranów, bez znaczenia czy są to urządzenia mobilne, czy komputery sacjonarne. 
 
     \subsubsection{Routing}
     Ścieżki w aplikacji frontendowej są zabezpieczone poprzez ekstrakcję ról z tokenu JWT, który kontroluje dostęp do zasobów, zapewniając, że tylko autoryzowani użytkownicy z odpowiednimi uprawnieniami mają dostęp do określonych widoków.
 
     \subsubsection{Testy}
-    % todo
+    Testy obejmują wszystkie serwisy, zapewnia to poprawność działania aplikacji w różnych scenariuszach, w tym przypadkach brzegowych i błędnych, w celu zapewnienia niezawodności i bezpieczeństwa. %tylko nie localstorage xD
 
     \subsubsection{Konteneryzacja - Docker}
     Aplikacja frontendowa została skonteneryzowana za pomocą Dockera, co pozwala na łatwe uruchomienie aplikacji w izolowanym środowisku kontenerowym:
@@ -47,10 +86,15 @@
         \item Plik \texttt{compose.yml} umożliwia uruchomienie aplikacji frontendowej na maszynie lokalnej w celach deweloperskich, testowych lub produkcyjnych.
         \item Plik \texttt{nginx.conf} definiuje konfigurację serwera Nginx, który będzie serwował pliki statyczne aplikacji frontendowej.
         \item Plik \texttt{nginx.conf.template} jest szablonem konfiguracji Nginx, który po uruchomieniu kontenera jest dynamicznie przekształcany przez skrypt \texttt{run.sh}, aby uwzględnić adres API.
-        \item Plik \texttt{run.sh} uruchamia proces Nginx, zastępując zmienną BACKEND_URL w pliku konfiguracyjnym Nginx, dzięki czemu aplikacja frontendowa może komunikować się z odpowiednim API.
-        \item Plik \texttt{.env.template} zawiera nazwy zmiennych środowiskowych, które są wymagane do uruchomienia aplikacji.
+        \item Plik \texttt{run.sh} uruchamia proces Nginx, zastępując zmienną BACKEND\_URL w pliku konfiguracyjnym Nginx, dzięki czemu aplikacja frontendowa może komunikować się z odpowiednim API.
+        \item Plik \texttt{env.template} zawiera nazwy zmiennych środowiskowych, które są wymagane do uruchomienia aplikacji.
         \item Plik \texttt{.dockerignore} ogranicza kontekst budowania obrazu, ignorując zbędne pliki, co przyspiesza proces budowania obrazu.
     \end{itemize}
     Całość konfiguracji pomaga oraz umożliwia szybkie, niezawodne i powtarzalne uruchamianie aplikacji w kontenerach, co pozwala na łatwe testowanie i rozwijanie aplikacji w różnych środowiskach.
+
+\subsubsection{Inne}
+W celu zaimplementowania funkcji wyboru lokalizacji użytkownika oraz lokalizacji magazynu w aplikacji wykorzystano bibliotekę Leaflet w połączeniu z danymi mapowymi dostarczanymi przez OpenStreetMap. Leaflet jest lekkim i wszechstronnym narzędziem do pracy z mapami interaktywnymi, co pozwoliło na intuicyjne i dynamiczne zarządzanie lokalizacjami w aplikacji. Aby upewnić się, że wskazana lokalizacja użytkownika jest poprawna wykorzystani dostęp do lokalizacji urządzenia. 
+
+W aplikacji wdrożono funkcję umożliwiającą szybki dostęp do informacji na temat przechowywanego produktu w magazynie poprzez skanowanie kodów QR lub kodów kreskowych EAN. Ta funkcjonalność znacząco przyspiesza procesy wyszukiwania produktów oraz zarządzaniem stanem magazynowym.
 
 \end{document}
