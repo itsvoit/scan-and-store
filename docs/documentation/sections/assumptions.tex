@@ -4,15 +4,15 @@
 \begin{document}
 \section{Założenia wstępne}
     \subsection{Dobór techonologii}
-        Najważniejszą techonologią dla projektu jest \textbf{Progressive Web App} (PWA). 
+        Najważniejszą techonologią dla projektu jest \textbf{Progressive Web App} (PWA)\cite{pwa}. 
         
-        Aby wybrać framework do implementacji warstwy użytkownika (fronendu) zwrócono szczególną uwagę na dobre wsparcie dla technologii PWA i wybrano framework \textbf{Angular}. Dzięki swojej kompleksowości, wbudowanym narzędziom i ekosystemowi, Angular umożliwia szybkie i efektywne budowanie aplikacji PWA spełniające nowoczesne wymagania użytkowników.
+        Aby wybrać framework do implementacji warstwy użytkownika (fronendu) zwrócono szczególną uwagę na dobre wsparcie dla technologii PWA i wybrano framework \textbf{Angular}\cite{angular}. Dzięki swojej kompleksowości, wbudowanym narzędziom i ekosystemowi, Angular umożliwia szybkie i efektywne budowanie aplikacji PWA spełniające nowoczesne wymagania użytkowników.
 
-        Warstwę systemową (backend) zaimplementowano przy użyciu frameworku \textbf{Spring Boot}, który ma duże wsparcie dla zabezpieczeń (Spring Security) oraz prosty do zaimplementowania zestaw punktów końcowych (endpointów) jako REST API.
+        Warstwę systemową (backend) zaimplementowano przy użyciu frameworku \textbf{Spring Boot}\cite{springboot}, który ma duże wsparcie dla zabezpieczeń (Spring Security) oraz prosty do zaimplementowania zestaw punktów końcowych (endpointów) jako REST API.
 
-        Jako bazę danych wybrano \textbf{PostgreSQL}. Zespół nie miał doświadczenia z nierelacyjnymi bazami danych, tylko taka alternatywa była dostępna na AWS.
+        Jako bazę danych wybrano \textbf{PostgreSQL}\cite{postgresql}. Zespół nie miał doświadczenia z nierelacyjnymi bazami danych, tylko taka alternatywa była dostępna na AWS.
 
-        Całość architektury aplikacji została wdrożona przy pomocy \textbf{Terraform HashiCorp} na serwery \textbf{Amazon Web Services} (AWS), co niskim kosztem pozwala na przetestowanie różnych rozwiązań bez konieczności samodzielnego utrzymania infrastruktury.
+        Całość architektury aplikacji została wdrożona przy pomocy \textbf{Terraform HashiCorp}\cite{terraform} na serwery \textbf{Amazon Web Services} (AWS)\cite{aws}, co niskim kosztem pozwala na przetestowanie różnych rozwiązań bez konieczności samodzielnego utrzymania infrastruktury.
     \subsection{Ograniczenia}
         W fazie wstępnej planowania projektu przyjęto wyobrażonego klienta, który ustalił następujące założenia:
         \subsubsection*{Klient}

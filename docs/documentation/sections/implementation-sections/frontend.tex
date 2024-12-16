@@ -48,7 +48,7 @@
             \begin{itemize}
                 \item \textbf{category} - konkretne implementacje poszczególnych widoków dotyczących kategorii
                 \item \textbf{item} - konkretne implementacje poszczególnych widoków dotyczących produktów
-                \item \textbf{page-landing} - konkretna implementacja awidoku dotyczącego strony startowej
+                \item \textbf{page-landing} - konkretna implementacja widoku dotyczącego strony startowej
                 \item \textbf{scanner} - konkretna implementacja widoku dotyczącego strony ze skanerem
                 \item \textbf{services} - implementacja serwisu z którego korzystam w poszczególnych widokach do obsługi localstorage
                 \item \textbf{settings} - konkretna implementacja widoku dotyczącego strony z ustawieniami
@@ -58,12 +58,12 @@
             \item \textbf{mocks} - folder, w którym przechowuje się klasy modeli wykorzystywane do testowania
             \item \textbf{shared} - komponenty graficzne zazwyczaj wykorzystywane wiele razy: strony z błedami oraz podkomponenty używane w wielu widokach  
         \end{itemize}
-        \item \textbf{assets} - folder, w którym znajdują wykorzystane asety w aplikacji
+        \item \textbf{assets} - folder, w którym znajdują wykorzystane zasoby w aplikacji
         \begin{itemize}
             \item \textbf{logo} - folder, w którym są umieszczone loga o różnych rozmiarach potrzebne do stworzenia manifestu potrzebnego do działania PWA
-            \item \textbf{icons} - folder, w którym są przechowywane ikonki wykorzystane podczas tworzenia aplikacji
+            \item \textbf{icons} - folder, w którym są przechowywane ikony wykorzystane podczas tworzenia aplikacji
         \end{itemize}
-        \item \textbf{environment} - folder, w którym znajduje się environment.ts - plik z zdefiniowanymi zmiennymi środowiskowymi
+        \item \textbf{environment} - folder, w którym znajduje się environment.ts - plik ze zdefiniowanymi zmiennymi środowiskowymi
     \end{itemize}
 
     \subsubsection{Widoki}
@@ -82,18 +82,17 @@
         \item Plik \texttt{Dockerfile} wykorzystuje wieloetapowe budowanie, optymalizując proces tworzenia obrazu. Dzięki temu obraz jest lekki i zawiera tylko niezbędne zależności.
         Na pierwszym etapie (cache) pobierane są zależności z plików \texttt{package.json} i \texttt{package-lock.json} i cache’owane, co przyspiesza kolejne kompilacje.
         Na drugim etapie (builder) aplikacja jest kompilowana za pomocą Angular CLI i polecenia \texttt{ng build}, tworząc statyczne pliki w katalogu \texttt{/app/dist}, gotowe do serwowania przez Nginx.
-        Na ostatnim etapie (runner) uruchamiana jest aplikacja na lekkim obrazie \texttt{nginx:1.27.0-alpine3.19}, który serwuje pliki statyczne, z domyślnie wystawionym portem 80. Skrypt \texttt{run.sh} dynamicznie nadpisuje adres API do konfiguracji Nginx, umożliwiając komunikację między frontendem a backendem.
+        Na ostatnim etapie (runner) uruchamiana jest aplikacja na lekkim obrazie \texttt{nginx:1.27.0-alpine3.19}, który serwuje pliki statyczne, z domyślnie wystawionym portem 80. Skrypt \texttt{run.sh} uruchamia proces Nginx w trybie deamon.
         \item Plik \texttt{compose.yml} umożliwia uruchomienie aplikacji frontendowej na maszynie lokalnej w celach deweloperskich, testowych lub produkcyjnych.
         \item Plik \texttt{nginx.conf} definiuje konfigurację serwera Nginx, który będzie serwował pliki statyczne aplikacji frontendowej.
-        \item Plik \texttt{nginx.conf.template} jest szablonem konfiguracji Nginx, który po uruchomieniu kontenera jest dynamicznie przekształcany przez skrypt \texttt{run.sh}, aby uwzględnić adres API.
-        \item Plik \texttt{run.sh} uruchamia proces Nginx, zastępując zmienną BACKEND\_URL w pliku konfiguracyjnym Nginx, dzięki czemu aplikacja frontendowa może komunikować się z odpowiednim API.
+        \item Plik \texttt{nginx.conf.template} jest szablonem konfiguracji Nginx, wykorzystywanym przez Docker'a.
         \item Plik \texttt{env.template} zawiera nazwy zmiennych środowiskowych, które są wymagane do uruchomienia aplikacji.
         \item Plik \texttt{.dockerignore} ogranicza kontekst budowania obrazu, ignorując zbędne pliki, co przyspiesza proces budowania obrazu.
     \end{itemize}
     Całość konfiguracji pomaga oraz umożliwia szybkie, niezawodne i powtarzalne uruchamianie aplikacji w kontenerach, co pozwala na łatwe testowanie i rozwijanie aplikacji w różnych środowiskach.
 
 \subsubsection{Inne}
-W celu zaimplementowania funkcji wyboru lokalizacji użytkownika oraz lokalizacji magazynu w aplikacji wykorzystano bibliotekę Leaflet w połączeniu z danymi mapowymi dostarczanymi przez OpenStreetMap. Leaflet jest lekkim i wszechstronnym narzędziem do pracy z mapami interaktywnymi, co pozwoliło na intuicyjne i dynamiczne zarządzanie lokalizacjami w aplikacji. Aby upewnić się, że wskazana lokalizacja użytkownika jest poprawna wykorzystani dostęp do lokalizacji urządzenia. 
+W celu zaimplementowania funkcji wyboru lokalizacji użytkownika oraz lokalizacji magazynu w aplikacji wykorzystano bibliotekę Leaflet\cite{leaflet} w połączeniu z danymi mapowymi dostarczanymi przez OpenStreetMap\cite{openstreetmap}. Leaflet jest lekkim i wszechstronnym narzędziem do pracy z mapami interaktywnymi, co pozwoliło na intuicyjne i dynamiczne zarządzanie lokalizacjami w aplikacji. Aby upewnić się, że wskazana lokalizacja użytkownika jest poprawna wykorzystani dostęp do lokalizacji urządzenia. 
 
 W aplikacji wdrożono funkcję umożliwiającą szybki dostęp do informacji na temat przechowywanego produktu w magazynie poprzez skanowanie kodów QR lub kodów kreskowych EAN. Ta funkcjonalność znacząco przyspiesza procesy wyszukiwania produktów oraz zarządzaniem stanem magazynowym.
 
